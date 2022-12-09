@@ -47,6 +47,7 @@ function AuthForm() {
         email: enteredEmail,
         password: enteredPassword,
       });
+      console.log('result sign in', result)
 
       if (!result.error) {
         // set some auth state

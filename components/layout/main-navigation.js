@@ -4,7 +4,8 @@ import { useSession, signOut } from 'next-auth/react';
 import classes from './main-navigation.module.css';
 
 function MainNavigation() {
-  const {session, loading} = useSession();
+  const {data:session, status} = useSession();
+  console.log('loading', session, 'session', status)
 
   function logoutHandler() {
     signOut();
@@ -19,17 +20,17 @@ function MainNavigation() {
       </Link>
       <nav>
         <ul>
-          {!session && !loading && (
+          {!session && status!=="loading" && (
             <li>
               <Link href='/auth'>Login</Link>
             </li>
           )}
-          {session && (
+          {status==="authenticated" && (
             <li>
               <Link href='/profile'>Profile</Link>
             </li>
           )}
-          {session && (
+          {status==="authenticated" && (
             <li>
               <button onClick={logoutHandler}>Logout</button>
             </li>

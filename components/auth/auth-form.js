@@ -35,6 +35,7 @@ function AuthForm() {
 
   async function submitHandler(event) {
     event.preventDefault();
+    
 
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
@@ -56,9 +57,14 @@ function AuthForm() {
     } else {
       try {
         const result = await createUser(enteredEmail, enteredPassword);
-        console.log(result);
+        console.log('result sign in', result);
+        router.replace('/auth');
+        alert(result.message);
+        emailInputRef.current.value="";
+        passwordInputRef.current.value="";
       } catch (error) {
         console.log(error);
+        alert(error);
       }
     }
   }

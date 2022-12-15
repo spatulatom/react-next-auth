@@ -11,9 +11,9 @@ export default function kkks() {
           <img src="images/logo-bookmark.svg" alt="" id="logo" />
         </div>
 
-        {/* Menu Items */}
+    
         <div
-          className="hidden items-center space-x-10 uppercase text-grayishBlue md:flex"
+          className="hidden  items-center space-x-10 uppercase text-gray-500 md:flex"
         >
           <a href="#features" className="tracking-widest hover:text-softRed"
             >Features</a>
@@ -23,10 +23,10 @@ export default function kkks() {
 
           <a
             href="#"
-            className="px-8 py-2 text-white bg-softRed border-2 border-softRed rounded-lg shadow-md hover:text-softRed hover:bg-white"
+            className="px-8 py-2 text-white border-2 bg-red-400 border-softRed rounded-lg shadow-md hover:text-red-400 hover:bg-white"
             >Login</a>
         </div>
-         {/* Hamburger Button */}
+        
         <button
           id="menu-btn"
           className="z-30 block md:hidden focus:outline-none hamburger"
@@ -39,7 +39,7 @@ export default function kkks() {
       {/* Mobile Menu */}
       <div
         id="menu"
-        className="fixed inset-0 z-20 hidden flex-col items-center self-end w-full h-full m-h-screen px-6 py-1 pt-24 pb-4 tracking-widest text-white uppercase divide-y divide-gray-500 opacity-90 bg-veryDarkBlue"
+        className="fixed inset-0 z-20 hidden flex-col items-center self-end w-full h-full m-h-screen px-6 py-1 pt-24 pb-4 tracking-widest uppercase divide-y divide-gray-500 opacity-90 bg-veryDarkBlue"
       >
         <div className="w-full py-3 text-center">
           <a href="#features" className="block hover:text-softRed">Features</a>
@@ -82,7 +82,7 @@ export default function kkks() {
           >
             <a
               href="#"
-              className="p-4 text-sm font-semibold text-white bg-softBlue rounded shadow-md border-2 border-softBlue md:text-base hover:bg-white hover:text-softBlue"
+              className="p-4 text-sm font-semibold text-white bg-blue-600 rounded shadow-md border-2 border-softBlue md:text-base hover:bg-white hover:text-blue-500"
               >Get It On Chrome</a
             >
             <a
@@ -132,7 +132,7 @@ export default function kkks() {
              text-gray-600 border-b md:border-b-0 hover:text-softRed md:w-1/3 tab"
             data-target="panel-1"
           >
-            <div className="py-5 border-b-4 border-softRed" data-target="panel-1">
+            <div className="py-5 border-b-4 border-red-400" data-target="panel-1">
               Simple Bookmarking
             </div>
           </div>
@@ -296,7 +296,7 @@ export default function kkks() {
           <div className="bg-dots bg-repeat-x px-6 pt-6 capitalize">
             <a
               href="#"
-              className="block w-full py-3 text-white duration-200 border-2 rounded-lg bg-softBlue hover:text-softBlue hover:bg-white border-softBlue"
+              className="block w-full py-3 text-white duration-200 border-2 rounded-lg bg-blue-500 hover:text-softBlue hover:bg-white border-blue-500"
               >Add & Install Extension</a
             >
           </div>
@@ -319,7 +319,7 @@ export default function kkks() {
             <div className="bg-dots bg-repeat-x px-6 pt-6 capitalize">
               <a
                 href="#"
-                className="block w-full py-3 text-white duration-200 border-2 rounded-lg bg-softBlue hover:text-softBlue hover:bg-white border-softBlue"
+                className="block w-full py-3 text-white duration-200 border-2 rounded-lg bg-blue-500 hover:text-blue-500 hover:bg-white border-softBlue"
                 >Add & Install Extension</a
               >
             </div>
@@ -343,7 +343,7 @@ export default function kkks() {
             <div className="bg-dots bg-repeat-x px-6 pt-6 capitalize">
               <a
                 href="#"
-                className="block w-full py-3 text-white duration-200 border-2 rounded-lg bg-softBlue hover:text-softBlue hover:bg-white border-softBlue"
+                className="block w-full py-3 text-white duration-200 border-2 rounded-lg bg-blue-500 hover:text-softBlue hover:bg-white border-blue-500"
                 >Add & Install Extension</a
               >
             </div>
@@ -358,7 +358,7 @@ export default function kkks() {
         <h2 className="mb-6 text-3xl font-semibold text-center md:text-4xl">
           Frequently Asked Questions
         </h2>
-        <p className="max-w-lg px-6 mx-auto text-center text-graishBlue">
+        <p className="max-w-lg px-6 mx-auto text-center text-gray-500">
           Here are some of our FAQs. If you have any other questions you'd like
           answered please feel free to email us.
         </p>
@@ -461,7 +461,7 @@ export default function kkks() {
               <div
                 className="transition duration-500 ease group-hover:text-red-500"
               >
-                Is ther a mobile app?
+                Is there a mobile app?
               </div>
               {/* Arrow */}
               <div
@@ -535,7 +535,7 @@ export default function kkks() {
     </section>
 
     {/* Newsletter Section */}
-    <section id="newsletter" className="bg-softBlue">
+    <section id="newsletter" className="bg-blue-600">
       {/* Main Container */}
       <div className="max-w-lg mx-auto py-24">
         <p
@@ -565,7 +565,7 @@ export default function kkks() {
 
             <input
               type="submit"
-              className="inline-flex px-6 py-3 font-semibold text-center text-white duration-200 transform rounded-lg cursor-pointer focus:outline-none bg-softRed hover:opacity-90"
+              className="inline-flex px-6 py-3 font-semibold text-center text-white duration-200 transform rounded-lg cursor-pointer focus:outline-none bg-red-500 hover:opacity-90"
               value="Contact Us"
             />
           </div>
@@ -574,20 +574,20 @@ export default function kkks() {
     </section>
 
     {/* Footer */}
-    <footer className="py-16 bg-veryDarkBlue">
+    <footer className="py-16 bg-veryDarkBlue ">
       {/* Footer Flex Container */}
       <div
         className="container flex flex-col items-center justify-between mx-auto space-y-16 px-6 md:flex-row md:space-y-0"
       >
         {/* Logo/Menu Container */}
         <div
-          className="flex flex-col items-center justify-between space-y-8 text-lg font-light md:flex-row md:space-y-0 md:space-x-14 text-grayishBlue"
+          className="flex flex-col items-center justify-between space-y-8 text-lg font-light md:flex-row md:space-y-0 md:space-x-14 text-gray-300"
         >
           <img src="images/logo-bookmark-footer.svg" alt="" className="mb-1" />
 
-          <a href="#features" className="uppercase hover:text-softRed">Features</a>
-          <a href="#download" className="uppercase hover:text-softRed">Download</a>
-          <a href="#faq" className="uppercase hover:text-softRed">FAQ</a>
+          <a href="#features" className="uppercase hover:text-red-500">Features</a>
+          <a href="#download" className="uppercase hover:text-red-500">Download</a>
+          <a href="#faq" className="uppercase hover:text-red-500">FAQ</a>
         </div>
 
         {/* Social Container */}

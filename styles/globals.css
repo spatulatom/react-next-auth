@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@media screen(lg) {
+  .bg-hero {
+    width: 2000px;
+    height: 300px;
+    left: 30%;
+    @apply absolute rounded-l-full top-52 bg-blue-500;
+  }
+
+  .bg-tabs {
+    width: 2000px;
+    height: 300px;
+    right: 60%;
+    @apply absolute rounded-r-full top-60 bg-blue-500;
+  }
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans:wght@400;700&display=swap');
 
 * {

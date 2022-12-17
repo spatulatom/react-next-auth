@@ -1,5 +1,6 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 
 export default function Jokes() {
@@ -9,6 +10,30 @@ export default function Jokes() {
     const [panel1Active, setPanel1Active] = useState(true);
     const [panel2Active, setPanel2Active] = useState(false);
     const [panel3Active, setPanel3Active] = useState(false);
+    const [joke, setJoke] = useState('');
+    const [loading, setIsLoading] = useState(true);
+
+    const saveJoke = () => {
+
+    }
+
+    const getJoke = async () => {
+      setIsLoading(true);
+      const config = {
+        headers: {
+          Accept: 'application/json',
+        },
+      }
+    
+      axios.get('https://icanhazdadjoke.com', config).then((res) => {
+        setJoke(res.data.joke)
+      })
+      setIsLoading(false)
+
+    }
+    useEffect(()=>{
+      getJoke()
+    },[])
   
     const showPanel1 = (e) => {
       setTab1(true);
@@ -17,6 +42,7 @@ export default function Jokes() {
       setPanel1Active(true);
       setPanel2Active(false);
       setPanel3Active(false);
+      getJoke();
     };
   
     const showPanel2 =()=>{
@@ -26,6 +52,7 @@ export default function Jokes() {
       setPanel1Active(false);
       setPanel2Active(true);
       setPanel3Active(false);
+      getJoke();
     }
   
     const showPanel3 =()=>{
@@ -35,6 +62,7 @@ export default function Jokes() {
       setPanel1Active(false);
       setPanel2Active(false);
       setPanel3Active(true);
+      getJoke();
     }
   return (
     <section id="tabs">
@@ -113,20 +141,18 @@ export default function Jokes() {
           </div>
           {/* Panel Content */}
           <div className="flex flex-col space-y-8 md:w-1/2">
-            <h3 className="mt-32 text-3xl font-semibold text-center md:mt-0 md:text-left">
-              Bookmark in one click
+            <h3 className="mt-32 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
+            {loading? 'loading...': joke}
             </h3>
-            <p className="max-w-md text-center text-grayishBlue md:text-left">
-              Organize your bookmarks however you like. Our simple
-              drag-and-drop interface gives you complete control over how
-              you manage your favourite sites.
-            </p>
-            <div className="mx-auto md:mx-0">
+            {/* <p className="max-w-md text-center text-grayishBlue md:text-left">
+              
+            </p> */}
+            <div className="mx-auto md:mx-0" onClick={saveJoke}>
               <a
                 href="#"
                 className="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
               >
-                More Info
+                Save
               </a>
             </div>
           </div>
@@ -148,20 +174,18 @@ export default function Jokes() {
           </div>
           {/* Panel Content */}
           <div className="flex flex-col space-y-8 md:w-1/2">
-            <h3 className="mt-14 text-3xl font-semibold text-center md:mt-0 md:text-left">
-              Intelligent search
+            <h3 className="mt-14 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
+              {loading? 'loading...': joke}
             </h3>
-            <p className="max-w-md text-center text-grayishBlue md:text-left">
-              Our powerful search feature will help you find saved sites in
-              no time at all. No need to trawl through all of your
-              bookmarks.
-            </p>
+            {/* <p className="max-w-md text-center text-grayishBlue md:text-left">
+           {joke}
+            </p> */}
             <div className="mx-auto md:mx-0">
               <a
                 href="#"
                 className="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
               >
-                More Info
+                Save
               </a>
             </div>
           </div>
@@ -183,20 +207,18 @@ export default function Jokes() {
           </div>
           {/* Panel Content */}
           <div className="flex flex-col space-y-8 md:w-1/2">
-            <h3 className="mt-14 text-3xl font-semibold text-center md:mt-0 md:text-left">
-              Share your bookmarks
+            <h3 className="mt-14 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
+            {loading? 'loading...': joke}
             </h3>
-            <p className="max-w-md text-center text-grayishBlue md:text-left">
-              Easily share your bookmarks and collections with others.
-              Create a shareable a link that you can send at the click of a
-              button.
-            </p>
+            {/* <p className="max-w-md text-center text-grayishBlue md:text-left">
+            {joke}
+            </p> */}
             <div className="mx-auto md:mx-0">
               <a
                 href="#"
                 className="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
               >
-                More Info
+                Save
               </a>
             </div>
           </div>

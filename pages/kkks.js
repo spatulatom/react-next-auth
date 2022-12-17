@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link'
 import Jokes from '../components/jokes';
+import { useSession, signOut } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
 export default function kkks() {
 

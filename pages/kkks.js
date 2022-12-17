@@ -5,6 +5,8 @@ import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
 export default function kkks() {
+  const { data: session, status } = useSession();
+  const router = useRouter();
 
   return (
     <div className="overflow-x-hidden scroll-smooth">
@@ -129,7 +131,7 @@ export default function kkks() {
       </section>
 
       {/* Features Tabs */}
-      <Jokes/>
+     {status==="authenticated"? <Jokes/>: null}
 
      
       {/* Download Heading */}

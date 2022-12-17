@@ -12,17 +12,18 @@ export default function Jokes() {
   const [joke, setJoke] = useState('');
   const [loading, setIsLoading] = useState(true);
 
-  async function saveJoke(passedJoke) {
-    const response = await fetch('/api/user/save-jokes.js', {
+  async function saveJoke() {
+    console.log('joke', joke)
+    const response = await fetch('/api/user/save-jokes', {
       method: 'POST',
-      body: JSON.stringify(passedJoke),
+      body: JSON.stringify(joke),
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
     const data = await response.json();
-    alert(data);
+    alert(data.message);
     console.log(data);
   }
 
@@ -155,9 +156,8 @@ export default function Jokes() {
               {/* <p className="max-w-md text-center text-grayishBlue md:text-left">
               
             </p> */}
-              <div className="mx-auto md:mx-0" onClick={saveJoke}>
-                <a
-                  href="#"
+              <div className="mx-auto md:mx-0" >
+                <a onClick={saveJoke}
                   className="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
                 >
                   Save
@@ -188,9 +188,8 @@ export default function Jokes() {
               {/* <p className="max-w-md text-center text-grayishBlue md:text-left">
            {joke}
             </p> */}
-              <div className="mx-auto md:mx-0">
-                <a
-                  href="#"
+              <div className="mx-auto md:mx-0" >
+                <a onClick={saveJoke}
                   className="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
                 >
                   Save
@@ -222,8 +221,7 @@ export default function Jokes() {
             {joke}
             </p> */}
               <div className="mx-auto md:mx-0">
-                <a
-                  href="#"
+                <a onClick={saveJoke}
                   className="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
                 >
                   Save

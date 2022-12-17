@@ -40,6 +40,7 @@ export default function Jokes() {
     });
     setIsLoading(false);
   };
+  
   useEffect(() => {
     getJoke();
   }, []);

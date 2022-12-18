@@ -24,6 +24,10 @@ export const getServerSideProps = async (context) => {
     client.close();
     return { message: 'User not found.' };
   }
+  if (!user.jokes) {
+    client.close();
+    return { props: {jokes: [{joke:"1"}] }
+  }}
 
   client.close();
   //    why we dont have to conver from json with .json() no idea it
@@ -40,9 +44,9 @@ export default function savedJokes(props) {
   const router = useRouter();
   const [jokes, setJokes] = useState(props.jokes);
 
-  useEffect(() => {
-    getSavedJokes();
-  }, []);
+//   useEffect(() => {
+//     getSavedJokes();
+//   }, []);
 
   
 

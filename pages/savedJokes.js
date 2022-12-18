@@ -5,8 +5,8 @@ import { getSession } from 'next-auth/react';
 import { connectToDatabase } from '../lib/db';
 
 export const getServerSideProps = async (context) => {
-    const {req, res} = context;
-    const session = await getSession({ req: req });
+  const { req, res } = context;
+  const session = await getSession({ req: req });
 
   if (!session) {
     return;
@@ -22,17 +22,17 @@ export const getServerSideProps = async (context) => {
 
   if (!user) {
     client.close();
-    return { message: 'User not found.' }
+    return { message: 'User not found.' };
   }
 
   client.close();
-//    why we dont have to conver from json with .json() no idea it 
-// produces error
-  const data = await user.jokes
-  
-  return{
-    props: {jokes: data}
-  }
+  //    why we dont have to conver from json with .json() no idea it
+  // produces error
+  const data = await user.jokes;
+
+  return {
+    props: { jokes: data },
+  };
 };
 
 export default function savedJokes(props) {
@@ -43,6 +43,8 @@ export default function savedJokes(props) {
   useEffect(() => {
     getSavedJokes();
   }, []);
+
+  
 
   async function getSavedJokes() {
     const response = await fetch('/api/user/saved-jokes', {

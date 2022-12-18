@@ -30,9 +30,14 @@ async function handler(req, res) {
     client.close();
     return;
   }
+  if (!user.jokes) {
+    res.status(404).json({ message: 'No saved jokes yet on your account.' });
+    client.close();
+    return;
+  }
 
   client.close();
-  res.status(200).json(user.jokes);
+  res.status(201).json(user.jokes);
 }
 
 export default handler;

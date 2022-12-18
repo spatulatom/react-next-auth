@@ -7,9 +7,12 @@ import { connectToDatabase } from '../lib/db';
 export const getServerSideProps = async (context) => {
   const { req, res } = context;
   const session = await getSession({ req: req });
+  
 
   if (!session) {
-    return;
+    return {
+        props: { jokes: 'no session'}
+    }
   }
 
   const userEmail = session.user.email;
@@ -26,8 +29,8 @@ export const getServerSideProps = async (context) => {
   }
   if (!user.jokes) {
     client.close();
-    return { props: {jokes: [{joke:"1"}] }
-  }}
+    return { props: { jokes: [{ joke: 'No jokes yet' }] } };
+  }
 
   client.close();
   //    why we dont have to conver from json with .json() no idea it
@@ -35,7 +38,7 @@ export const getServerSideProps = async (context) => {
   const data = await user.jokes;
 
   return {
-    props: { jokes: data },
+    props: { jokes: data  },
   };
 };
 
@@ -44,11 +47,13 @@ export default function savedJokes(props) {
   const router = useRouter();
   const [jokes, setJokes] = useState(props.jokes);
 
-//   useEffect(() => {
-//     getSavedJokes();
-//   }, []);
+   if (status === 'unauthenticated') {
+    router.replace('/');
+  }
 
-  
+  useEffect(() => {
+    getSavedJokes();
+  }, []);
 
   async function getSavedJokes() {
     const response = await fetch('/api/user/saved-jokes', {
@@ -56,14 +61,20 @@ export default function savedJokes(props) {
         'Content-Type': 'application/json',
       },
     });
-
-    const data = await response.json();
-    setJokes(data);
+    try {
+      if (response.ok) {
+        const data = await response.json();
+        setJokes(data);
+      } else {
+        const data = await response.json();
+        alert(data.message);
+      }
+    } catch (err) {
+      alert(err.message);
+    }
   }
 
-  if (status === 'unauthenticated') {
-    router.replace('/');
-  }
+ 
   if (status === 'authenticated') {
     if (jokes === undefined) {
       return <p className="mx-auto mt-6 text-center text-2xl">Loading...</p>;

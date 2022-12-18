@@ -40,7 +40,7 @@ export default function Jokes() {
     });
     setIsLoading(false);
   };
-  
+
   useEffect(() => {
     getJoke();
   }, []);
@@ -159,7 +159,7 @@ export default function Jokes() {
             </p> */}
               <div className="mx-auto md:mx-0" >
                 <a onClick={saveJoke}
-                  className="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
+                  className="px-6 cursor-pointer py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
                 >
                   Save
                 </a>
@@ -191,7 +191,7 @@ export default function Jokes() {
             </p> */}
               <div className="mx-auto md:mx-0" >
                 <a onClick={saveJoke}
-                  className="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
+                  className="cursor-pointer px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
                 >
                   Save
                 </a>
@@ -223,7 +223,7 @@ export default function Jokes() {
             </p> */}
               <div className="mx-auto md:mx-0">
                 <a onClick={saveJoke}
-                  className="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
+                  className=" cursor-pointer px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
                 >
                   Save
                 </a>

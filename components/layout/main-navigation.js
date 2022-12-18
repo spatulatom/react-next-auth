@@ -12,93 +12,96 @@ function MainNavigation() {
   }
 
   return (
-      <nav className="container relative bg-blue-500 mx-auto p-6">
-        {/* Flex Container For Nav Items  */}
-        <div className="flex items-center justify-between my-6">
-          {/* Logo */}
-          <Link href="/" className="z-30 cursor-pointer" >
+    <nav className="container relative bg-blue-500 mx-auto p-6">
+      {/* Flex Container For Nav Items  */}
+      <div className="flex items-center justify-between my-6">
+        {/* Logo */}
+        <Link href="/">
+          <span className="z-30 cursor-pointer">
             <img src="images/logo-bookmark.svg" alt="" id="logo" />
-          </Link>
+          </span>
+        </Link>
 
-          <div className="hidden  items-center space-x-10 uppercase text-white md:flex">
-            {status === 'authenticated' && (
-              <Link
-                href="/profile"
-                className="tracking-widest hover:text-softRed"
-              >
+        <div className="hidden  items-center space-x-10 uppercase text-white md:flex">
+          {status === 'authenticated' && (
+            <Link href="/profile">
+              <span className="tracking-widest hover:text-softRed cursor-pointer">
                 Profile
-              </Link>
-            )}
-            {status === 'authenticated' && (
-              <Link
-                href="/profile"
-                className="tracking-widest hover:text-softRed"
-              >
+              </span>
+            </Link>
+          )}
+          {status === 'authenticated' && (
+            <Link href="/profile">
+              <span className="tracking-widest hover:text-softRed cursor-pointer">
                 Download
-              </Link>
-            )}
-          {status === 'authenticated' && ( <Link href="" className="tracking-widest hover:text-softRed">
-              FAQ
-            </Link>)}
+              </span>
+            </Link>
+          )}
+          {status === 'authenticated' && (
+            <Link href="">
+              <span className="tracking-widest hover:text-softRed cursor-default">
+                {' '}
+                FAQ
+              </span>
+            </Link>
+          )}
 
-            {!session && status !== 'loading' && (
-              <Link
-                href="/auth"
-                className="px-8 py-2 text-white border-2 bg-red-400 border-softRed rounded-lg shadow-md hover:text-red-400 hover:bg-white"
-              >
-                Login
-              </Link>
-            )}
-            
-            {status === 'authenticated' && (
-              <div onClick={logoutHandler}
-                
-                className="px-8 py-2 text-white border-2 bg-red-400 border-softRed rounded-lg shadow-md hover:text-red-400 hover:bg-white"
-              >
-                Logut
-              </div>
-            )}
-          </div>
+          {!session && status !== 'loading' && (
+            <Link
+              href="/auth"
+              className="px-8 py-2 text-white border-2 bg-red-400 border-softRed rounded-lg shadow-md hover:text-red-400 hover:bg-white"
+            >
+            <span className="px-8 py-2 text-white border-2 bg-red-400 border-softRed rounded-lg shadow-md hover:text-red-400 hover:bg-white cursor-pointer"> Login </span>
+            </Link>
+          )}
 
-          <button
-            id="menu-btn"
-            className="z-30 block md:hidden focus:outline-none hamburger"
-          >
-            <span className="hamburger-top"></span>
-            <span className="hamburger-middle"></span>
-            <span className="hamburger-bottom"></span>
-          </button>
+          {status === 'authenticated' && (
+            <div
+              onClick={logoutHandler}
+              className="px-8 py-2 text-white border-2 bg-red-400 border-softRed rounded-lg shadow-md hover:text-red-400 hover:bg-white"
+            >
+              Logut
+            </div>
+          )}
         </div>
-        {/* Mobile Menu */}
-        <div
-          id="menu"
-          className="fixed inset-0 z-20 hidden flex-col items-center self-end w-full h-full m-h-screen px-6 py-1 pt-24 pb-4 tracking-widest uppercase divide-y divide-gray-500 opacity-90 bg-veryDarkBlue"
+
+        <button
+          id="menu-btn"
+          className="z-30 block md:hidden focus:outline-none hamburger"
         >
-          <div className="w-full py-3 text-center">
-            <Link href="#features" className="block hover:text-softRed">
-              Features
-            </Link>
-          </div>
-          <div className="w-full py-3 text-center">
-            <Link href="#download" className="block hover:text-softRed">
-              Download
-            </Link>
-          </div>
-          <div className="w-full py-3 text-center">
-            <Link href="#faq" className="block hover:text-softRed">
-              FAQ
-            </Link>
-          </div>
-          <div className="w-full py-3 text-center">
-            <Link href="#" className="block hover:text-softRed">
-              Login
-            </Link>
-          </div>
+          <span className="hamburger-top"></span>
+          <span className="hamburger-middle"></span>
+          <span className="hamburger-bottom"></span>
+        </button>
+      </div>
+      {/* Mobile Menu */}
+      <div
+        id="menu"
+        className="fixed inset-0 z-20 hidden flex-col items-center self-end w-full h-full m-h-screen px-6 py-1 pt-24 pb-4 tracking-widest uppercase divide-y divide-gray-500 opacity-90 bg-veryDarkBlue"
+      >
+        <div className="w-full py-3 text-center">
+          <Link href="#features" className="block hover:text-softRed">
+            Features
+          </Link>
         </div>
-      </nav>
-   
-    
-  )
+        <div className="w-full py-3 text-center">
+          <Link href="#download" className="block hover:text-softRed">
+            Download
+          </Link>
+        </div>
+        <div className="w-full py-3 text-center">
+          <Link href="#faq" className="block hover:text-softRed">
+            FAQ
+          </Link>
+        </div>
+        <div className="w-full py-3 text-center">
+          <Link href="#" className="block hover:text-softRed">
+            Login
+          </Link>
+        </div>
+      </div>
+    </nav>
+  );
 }
 
 export default MainNavigation;

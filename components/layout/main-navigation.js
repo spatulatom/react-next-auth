@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
 
-import classes from './main-navigation.module.css';
 
 function MainNavigation() {
   const { data: session, status } = useSession();
@@ -12,7 +11,7 @@ function MainNavigation() {
   }
 
   return (
-    <nav className="container relative bg-blue-500 mx-auto p-6">
+    <nav className="container relative bg-blue-500 mx-auto p-6 min-w-full">
       {/* Flex Container For Nav Items  */}
       <div className="flex items-center justify-between my-6">
         {/* Logo */}
@@ -31,16 +30,16 @@ function MainNavigation() {
             </Link>
           )}
           {status === 'authenticated' && (
-            <Link href="/profile">
+            <Link href="/savedJokes">
               <span className="tracking-widest hover:text-softRed cursor-pointer">
-                Download
+                Saved Jokes
               </span>
             </Link>
           )}
           {status === 'authenticated' && (
-            <Link href="">
+            <Link href="/faq">
               <span className="tracking-widest hover:text-softRed cursor-default">
-                {' '}
+              
                 FAQ
               </span>
             </Link>
@@ -58,7 +57,7 @@ function MainNavigation() {
           {status === 'authenticated' && (
             <div
               onClick={logoutHandler}
-              className="px-8 py-2 text-white border-2 bg-red-400 border-softRed rounded-lg shadow-md hover:text-red-400 hover:bg-white"
+              className="px-8 py-2 text-white border-2 bg-red-400 border-softRed rounded-lg shadow-md hover:text-red-400 hover:bg-white cursor-pointer"
             >
               Logut
             </div>

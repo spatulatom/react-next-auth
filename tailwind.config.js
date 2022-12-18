@@ -19,6 +19,9 @@ module.exports = {
         grayishBlue: 'hsl(229, 8%, 60%)',
         veryDarkBlue: 'hsl(229, 31%, 21%)',
       },
+      minHeight: {
+        '80vh': '80vh'
+      }
     },
 
     

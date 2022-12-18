@@ -4,8 +4,9 @@ import { hashPassword, verifyPassword } from '../../../lib/auth';
 import { connectToDatabase } from '../../../lib/db';
 
 async function handler(req, res) {
+  console.log('request');
   if (req.method !== 'GET') {
-    res.status(401).json({message: 'Not a GET request'})
+    res.status(401).json({ message: 'Not a GET request' });
     return;
   }
 
@@ -16,8 +17,7 @@ async function handler(req, res) {
     return;
   }
 
-  const userEmail = session.user.email; 
-  const joke = req.body
+  const userEmail = session.user.email;
 
   const client = await connectToDatabase();
 
@@ -30,12 +30,6 @@ async function handler(req, res) {
     client.close();
     return;
   }
-
- 
-
-
-
-
 
   client.close();
   res.status(200).json(user.jokes);

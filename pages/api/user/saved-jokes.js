@@ -38,7 +38,7 @@ async function handler(req, res) {
 
 
   client.close();
-  res.status(200).json({ });
+  res.status(200).json(user.jokes);
 }
 
 export default handler;

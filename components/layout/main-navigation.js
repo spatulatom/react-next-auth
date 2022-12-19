@@ -22,13 +22,7 @@ function MainNavigation() {
         </Link>
 
         <div className="hidden  items-center space-x-10 uppercase text-white md:flex">
-          {status === 'authenticated' && (
-            <Link href="/profile">
-              <span className="tracking-widest hover:text-softRed cursor-pointer">
-                Profile
-              </span>
-            </Link>
-          )}
+         
           {status === 'authenticated' && (
             <Link href="/savedJokes">
               <span className="tracking-widest hover:text-softRed cursor-pointer">
@@ -38,9 +32,16 @@ function MainNavigation() {
           )}
           {status === 'authenticated' && (
             <Link href="/faq">
-              <span className="tracking-widest hover:text-softRed cursor-default">
+              <span className="tracking-widest hover:text-softRed cursor-pointer">
               
                 FAQ
+              </span>
+            </Link>
+          )}
+           {status === 'authenticated' && (
+            <Link href="/profile">
+              <span className="tracking-widest hover:text-softRed cursor-pointer">
+                Profile
               </span>
             </Link>
           )}

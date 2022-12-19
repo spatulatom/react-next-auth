@@ -3,19 +3,31 @@ import { getSession } from 'next-auth/react';
 import UserProfile from '../components/profile/user-profile';
 import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
+import { Fragment } from 'react';
 
 function ProfilePage() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  console.log('router', router)
+  console.log('router', router);
   if (status === 'authenticated') {
-    return <UserProfile/>
+    return (
+      <Fragment>
+        <Head>
+          <title>User Profile</title>
+          <meta
+            name="description"
+            content="See your details/change your password!"
+          />
+        </Head>
+        <UserProfile />
+      </Fragment>
+    );
   }
-  if(status==="unauthenticated"){
-    router.replace('/')
+  if (status === 'unauthenticated') {
+    router.replace('/');
   }
-  
 }
 
 // export async function getServerSideProps(context) {

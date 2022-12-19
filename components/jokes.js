@@ -142,7 +142,7 @@ export default function Jokes() {
             } py-5 md:flex-row md:space-x-7 panel panel-1`}
           >
             {/* Panel Image */}
-            <div className="flex justify-center md:w-1/2">
+            <div className="hidden md:flex md:justify-center md:w-1/2">
               <img
                 src="images/illustration-features-tab-1.svg"
                 alt=""
@@ -150,8 +150,8 @@ export default function Jokes() {
               />
             </div>
             {/* Panel Content */}
-            <div className="flex flex-col space-y-8 md:w-1/2">
-              <h3 className="mt-32 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
+            <div className="flex flex-col justify-around space-y-8 md:w-1/2">
+              <h3 className="mt-4 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
                 {loading ? 'loading...' : joke}
               </h3>
               {/* <p className="max-w-md text-center text-grayishBlue md:text-left">
@@ -174,7 +174,7 @@ export default function Jokes() {
             } py-5 md:flex-row md:space-x-7 panel panel-2`}
           >
             {/* Panel Image */}
-            <div className="flex justify-center md:w-1/2">
+            <div className="hidden md:flex md:justify-center md:w-1/2">
               <img
                 src="images/illustration-features-tab-2.svg"
                 alt=""
@@ -182,8 +182,8 @@ export default function Jokes() {
               />
             </div>
             {/* Panel Content */}
-            <div className="flex flex-col space-y-8 md:w-1/2">
-              <h3 className="mt-14 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
+            <div className="flex flex-col justify-around space-y-8 md:w-1/2">
+              <h3 className="mt-4 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
                 {loading ? 'loading...' : joke}
               </h3>
               {/* <p className="max-w-md text-center text-grayishBlue md:text-left">
@@ -206,7 +206,7 @@ export default function Jokes() {
             } py-5 md:flex-row md:space-x-7 panel panel-3`}
           >
             {/* Panel Image */}
-            <div className="flex justify-center md:w-1/2">
+            <div className="hidden md:flex md:justify-center md:w-1/2">
               <img
                 src="images/illustration-features-tab-3.svg"
                 alt=""
@@ -214,8 +214,8 @@ export default function Jokes() {
               />
             </div>
             {/* Panel Content */}
-            <div className="flex flex-col space-y-8 md:w-1/2">
-              <h3 className="mt-14 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
+            <div className="flex flex-col justify-around space-y-8 md:w-1/2">
+              <h3 className="mt-4 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
                 {loading ? 'loading...' : joke}
               </h3>
               {/* <p className="max-w-md text-center text-grayishBlue md:text-left">

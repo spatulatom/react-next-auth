@@ -17,7 +17,7 @@ export default function Faq() {
           router.replace('/')
         }
       });
-    }, [router]);
+    }, []);
 
   return (
     <Fragment>

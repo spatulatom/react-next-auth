@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
 
-
 function MainNavigation() {
   const { data: session, status } = useSession();
   console.log('loading', session, 'session', status);
@@ -22,7 +21,6 @@ function MainNavigation() {
         </Link>
 
         <div className="hidden  items-center space-x-10 uppercase text-white md:flex">
-         
           {status === 'authenticated' && (
             <Link href="/savedJokes">
               <span className="tracking-widest hover:text-softRed cursor-pointer">
@@ -33,12 +31,11 @@ function MainNavigation() {
           {status === 'authenticated' && (
             <Link href="/faq">
               <span className="tracking-widest hover:text-softRed cursor-pointer">
-              
                 FAQ
               </span>
             </Link>
           )}
-           {status === 'authenticated' && (
+          {status === 'authenticated' && (
             <Link href="/profile">
               <span className="tracking-widest hover:text-softRed cursor-pointer">
                 Profile
@@ -47,11 +44,10 @@ function MainNavigation() {
           )}
 
           {!session && status !== 'loading' && (
-            <Link
-              href="/auth"
-              className="px-8 py-2 text-white border-2 bg-red-400 border-softRed rounded-lg shadow-md hover:text-red-400 hover:bg-white"
-            >
-            <span className="px-8 py-2 text-white border-2 bg-red-400 border-softRed rounded-lg shadow-md hover:text-red-400 hover:bg-white cursor-pointer"> Login </span>
+            <Link href="/auth">
+              <span className="px-8 py-2 text-white border-2 bg-red-400 border-softRed rounded-lg shadow-md hover:text-red-400 hover:bg-white cursor-pointer">
+                Login
+              </span>
             </Link>
           )}
 

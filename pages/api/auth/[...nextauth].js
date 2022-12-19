@@ -5,9 +5,12 @@ import { verifyPassword } from '../../../lib/auth';
 import { connectToDatabase } from '../../../lib/db';
 
 export default NextAuth({
+ 
+  secret: process.env.AUTH_SECRET,
   session: {
     jwt: true,
   },
+  
   providers: [
     CredentialsProvider({
       async authorize(credentials) {
@@ -18,7 +21,7 @@ export default NextAuth({
         const user = await usersCollection.findOne({
           email: credentials.email,
         });
-
+        console.log('LOG IN');
         if (!user) {
           client.close();
           throw new Error('No user found!');

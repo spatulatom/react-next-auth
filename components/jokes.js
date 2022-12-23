@@ -1,6 +1,7 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import NotificationContext from '../store/notification-context';
 
 export default function Jokes() {
   const [tab1Active, setTab1] = useState(true);
@@ -12,7 +13,15 @@ export default function Jokes() {
   const [joke, setJoke] = useState('');
   const [loading, setIsLoading] = useState(true);
 
+  const notificationCtx = useContext(NotificationContext);
+
   async function saveJoke() {
+    notificationCtx.showNotification({
+      title: 'Sending comment...',
+      message: 'Your comment is currently being stored into a database.',
+      status: 'pending',
+    });
+
     console.log('joke', joke)
     const response = await fetch('/api/user/save-jokes', {
       method: 'POST',

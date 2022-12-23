@@ -5,7 +5,7 @@ import { connectToDatabase } from '../../../lib/db';
 
 async function handler(req, res) {
   if (req.method !== 'POST') {
-    res.status(401).json({message: 'Not a POST request'})
+    res.status(401).json({ message: 'Not a POST request' });
     return;
   }
 
@@ -16,8 +16,8 @@ async function handler(req, res) {
     return;
   }
 
-  const userEmail = session.user.email; 
-  const joke = req.body
+  const userEmail = session.user.email;
+  const joke = req.body;
 
   const client = await connectToDatabase();
 
@@ -31,18 +31,13 @@ async function handler(req, res) {
     return;
   }
 
- 
-
-
-
   const result = await usersCollection.updateOne(
     { email: userEmail },
-    { "$push": { "jokes": { "joke": joke } }}
-
+    { $push: { jokes: { joke: joke } } }
   );
-//   const result = await usersCollection.insertOne({
-//     joke: joke,
-//   });
+  //   const result = await usersCollection.insertOne({
+  //     joke: joke,
+  //   });
 
   client.close();
   res.status(200).json({ message: 'Joke saved' });

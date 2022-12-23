@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { getSession } from 'next-auth/react';
@@ -67,9 +67,10 @@ export default function savedJokes(props) {
         setJokes(data);
       } else {
         const data = await response.json();
-        alert(data.message);
+        throw new Error (data.message || "Something went wrong!")
       }
     } catch (err) {
+      console.log('ERR', err)
       alert(err.message);
     }
   }

@@ -6,13 +6,15 @@ import { NotificationContextProvider } from '../store/notification-context';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <NotificationContextProvider>
+
     <SessionProvider session={pageProps.session}>
+    <NotificationContextProvider>
       <Layout>
         <Component {...pageProps}/>
       </Layout>
+      </NotificationContextProvider>
     </SessionProvider>
-    </NotificationContextProvider>
+   
   );
 }
 

@@ -35,6 +35,12 @@ async function handler(req, res) {
     client.close();
     return;
   }
+  if (user.jokes.length===0) {
+    console.log('NO LENGTH')
+    res.status(404).json({ message: 'No saved jokes yet on your account.' });
+    client.close();
+    return;
+  }
 
   client.close();
   res.status(201).json(user.jokes);

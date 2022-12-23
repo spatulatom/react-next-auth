@@ -7,12 +7,11 @@ import { connectToDatabase } from '../lib/db';
 export const getServerSideProps = async (context) => {
   const { req, res } = context;
   const session = await getSession({ req: req });
-  
 
   if (!session) {
     return {
-        props: { jokes: 'no session'}
-    }
+      props: { jokes: 'no session' },
+    };
   }
 
   const userEmail = session.user.email;
@@ -23,13 +22,19 @@ export const getServerSideProps = async (context) => {
 
   const user = await usersCollection.findOne({ email: userEmail });
 
+  if (!client) {
+    return {
+      props: { message: [{ err: 'Error connecting to the database!' }] },
+    };
+  }
+
   if (!user) {
     client.close();
-    return { message: 'User not found.' };
+    return { message: [{ err: 'User not found.' }] };
   }
-  if (!user.jokes) {
+  if (user.jokes.length === 0) {
     client.close();
-    return { props: { jokes: [{ joke: 'No jokes yet' }] } };
+    return { props: { message: [{ joke: 'No jokes yet' }] } };
   }
 
   client.close();
@@ -38,16 +43,16 @@ export const getServerSideProps = async (context) => {
   const data = await user.jokes;
 
   return {
-    props: { jokes: data  },
+    props: { message: data },
   };
 };
 
 export default function savedJokes(props) {
   const { data: session, status } = useSession();
   const router = useRouter();
-  const [jokes, setJokes] = useState(props.jokes);
+  const [jokes, setJokes] = useState(props.message);
 
-   if (status === 'unauthenticated') {
+  if (status === 'unauthenticated') {
     router.replace('/');
   }
 
@@ -67,21 +72,22 @@ export default function savedJokes(props) {
         setJokes(data);
       } else {
         const data = await response.json();
-        throw new Error (data.message || "Something went wrong!")
+        throw new Error(data.message || 'Something went wrong!');
       }
     } catch (err) {
-      console.log('ERR', err)
+      console.log('ERR', err);
       alert(err);
     }
   }
 
- 
   if (status === 'authenticated') {
     if (jokes.length === 0) {
-      return   <p className="max-w-lg px-6 py-8 mx-auto text-center text-gray-500">
-      Here are some of our FAQs. If you have any other questions you'd
-      like answered please feel free to email us.
-    </p>
+      return (
+        <p className="max-w-lg px-6 py-8 mx-auto text-center text-gray-500">
+          Here are some of our FAQs. If you have any other questions you'd like
+          answered please feel free to email us
+        </p>
+      );
     } else {
       return (
         <div>

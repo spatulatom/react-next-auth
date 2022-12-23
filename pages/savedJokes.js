@@ -77,8 +77,11 @@ export default function savedJokes(props) {
 
  
   if (status === 'authenticated') {
-    if (jokes === undefined) {
-      return <p className="mx-auto mt-6 text-center text-2xl">Loading...</p>;
+    if (jokes.length === 0) {
+      return   <p className="max-w-lg px-6 py-8 mx-auto text-center text-gray-500">
+      Here are some of our FAQs. If you have any other questions you'd
+      like answered please feel free to email us.
+    </p>
     } else {
       return (
         <div>

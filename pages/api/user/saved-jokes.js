@@ -20,10 +20,16 @@ async function handler(req, res) {
   const userEmail = session.user.email;
 
   const client = await connectToDatabase();
+  if (!client) {
+    res.status(404).json({ message: 'Connection do MongoDb failed!' });
+    client.close();
+    return;
+  }
 
   const usersCollection = client.db().collection('users');
 
   const user = await usersCollection.findOne({ email: userEmail });
+
 
   if (!user) {
     res.status(404).json({ message: 'User not found.' });

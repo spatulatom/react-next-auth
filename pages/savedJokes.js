@@ -34,7 +34,7 @@ export const getServerSideProps = async (context) => {
   }
   if (user.jokes.length === 0) {
     client.close();
-    return { props: { message: [{ joke: 'No jokes yet' }] } };
+    return { props: { err: [{ joke: 'No jokes yet' }] } };
   }
 
   client.close();
@@ -50,7 +50,7 @@ export const getServerSideProps = async (context) => {
 export default function savedJokes(props) {
   const { data: session, status } = useSession();
   const router = useRouter();
-  const [jokes, setJokes] = useState(props.message);
+  const [jokes, setJokes] = useState(props.message||[]);
 
   if (status === 'unauthenticated') {
     router.replace('/');

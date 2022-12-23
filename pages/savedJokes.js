@@ -24,17 +24,17 @@ export const getServerSideProps = async (context) => {
 
   if (!client) {
     return {
-      props: { message: [{ err: 'Error connecting to the database!' }] },
+      props: { err: [{ err: 'Error connecting to the database!' }] },
     };
   }
 
   if (!user) {
     client.close();
-    return { message: [{ err: 'User not found.' }] };
+    return { err: [{ err: 'User not found.' }] };
   }
   if (user.jokes.length === 0) {
     client.close();
-    return { props: { err: [{ joke: 'No jokes yet' }] } };
+    return { props: { err: [{ err: 'No jokes yet' }] } };
   }
 
   client.close();
@@ -50,7 +50,8 @@ export const getServerSideProps = async (context) => {
 export default function savedJokes(props) {
   const { data: session, status } = useSession();
   const router = useRouter();
-  const [jokes, setJokes] = useState(props.message||[]);
+  const [jokes, setJokes] = useState(props.message || []);
+  const [error, setError] = useState(props.err || []);
 
   if (status === 'unauthenticated') {
     router.replace('/');
@@ -72,20 +73,29 @@ export default function savedJokes(props) {
         setJokes(data);
       } else {
         const data = await response.json();
-        throw new Error(data.message || 'Something went wrong!');
+        setError(data.message || [{ err: 'Something went wrong!' }]);
       }
     } catch (err) {
       console.log('ERR', err);
+      setError(
+        err.message || [{ err: 'Something went wrong with the server!' }]
+      );
       alert(err);
     }
   }
-
+ console.log('ERROR', error)
   if (status === 'authenticated') {
-    if (jokes.length === 0) {
+    if (jokes.length === 0 && error.length === 0) {
       return (
         <p className="max-w-lg px-6 py-8 mx-auto text-center text-gray-500">
           Here are some of our FAQs. If you have any other questions you'd like
           answered please feel free to email us
+        </p>
+      );
+    } else if (jokes.length === 0 && error.length !== 0) {
+      return (
+        <p className="max-w-lg px-6 py-8 mx-auto text-center text-gray-500">
+          {error[0].err}
         </p>
       );
     } else {

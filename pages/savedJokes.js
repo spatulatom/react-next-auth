@@ -71,7 +71,7 @@ export default function savedJokes(props) {
       }
     } catch (err) {
       console.log('ERR', err)
-      alert(err.message);
+      alert(err);
     }
   }
 

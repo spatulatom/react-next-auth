@@ -1,14 +1,31 @@
 import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import NotificationContext from '../../store/notification-context';
 
 function MainNavigation() {
   const [showMobile, setShowMobile] = useState(false);
   const { data: session, status } = useSession();
   console.log('loading', session, 'session', status);
+  const notificationCtx = useContext(NotificationContext);
 
   function logoutHandler() {
-    signOut();
+    notificationCtx.showNotification({
+      title: 'Signing out...',
+      message: 'You are being loggout ot of your account!',
+      status: 'pending',
+    });
+    setTimeout(()=>{
+      signOut();
+      notificationCtx.showNotification({
+        title: 'Success!',
+        message: 'You have been signed out. Come back again!',
+        status: 'success',
+      });
+    },2000)
+  
+  
+  
     handleMobileMenu();
   }
 

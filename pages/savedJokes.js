@@ -58,7 +58,7 @@ export default function savedJokes(props) {
 
   useEffect(() => {
     getSavedJokes();
-  }, [jokes]);
+  }, []);
 
   async function getSavedJokes() {
     const response = await fetch('/api/user/saved-jokes', {

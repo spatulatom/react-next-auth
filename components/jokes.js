@@ -101,7 +101,7 @@ export default function Jokes() {
     setPanel3Active(true);
     getJoke();
   };
-  console.log('JOKE', joke)
+  console.log('JOKE', joke);
   return (
     <section id="tabs">
       {/* abs/Panels Container */}
@@ -181,11 +181,10 @@ export default function Jokes() {
             <div className="flex flex-col justify-around space-y-8 md:w-1/2">
               <h3 className="mt-4 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
                 {loading ? 'loading...' : joke}
-                {error ? error : null}
               </h3>
-              {/* <p className="max-w-md text-center text-grayishBlue md:text-left">
-              
-            </p> */}
+             
+                {error ?  <p className="max-w-md text-center py-4 text-white bg-red-400">error</p> : null}
+            
               {joke ? (
                 <div className="mx-auto md:mx-0">
                   <a
@@ -197,8 +196,8 @@ export default function Jokes() {
                 </div>
               ) : (
                 <div className="mx-auto md:mx-0">
-                  <button disabled
-                    
+                  <button
+                    disabled
                     className="px-6 cursor-pointer py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue cursor-not-allowed"
                   >
                     Save
@@ -226,12 +225,9 @@ export default function Jokes() {
             <div className="flex flex-col justify-around space-y-8 md:w-1/2">
               <h3 className="mt-4 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
                 {loading ? 'loading...' : joke}
-                {error ? error : null}
               </h3>
-              {/* <p className="max-w-md text-center text-grayishBlue md:text-left">
-           {joke}
-            </p> */}
-                {joke ? (
+              {error ?  <p className="max-w-md text-center py-4 text-white bg-red-400">error</p> : null}
+              {joke ? (
                 <div className="mx-auto md:mx-0">
                   <a
                     onClick={saveJoke}
@@ -242,8 +238,8 @@ export default function Jokes() {
                 </div>
               ) : (
                 <div className="mx-auto md:mx-0">
-                  <button disabled
-                    
+                  <button
+                    disabled
                     className="px-6 cursor-pointer py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue cursor-not-allowed"
                   >
                     Save
@@ -271,12 +267,9 @@ export default function Jokes() {
             <div className="flex flex-col justify-around space-y-8 md:w-1/2">
               <h3 className="mt-4 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
                 {loading ? 'loading...' : joke}
-                {error ? error : null}
               </h3>
-              {/* <p className="max-w-md text-center text-grayishBlue md:text-left">
-            {joke}
-            </p> */}
-                {joke ? (
+               {error ?  <p className="max-w-md text-center py-4 text-white bg-red-400">error</p> : null}
+              {joke ? (
                 <div className="mx-auto md:mx-0">
                   <a
                     onClick={saveJoke}
@@ -287,8 +280,8 @@ export default function Jokes() {
                 </div>
               ) : (
                 <div className="mx-auto md:mx-0">
-                  <button disabled
-                    
+                  <button
+                    disabled
                     className="px-6 cursor-pointer py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue cursor-not-allowed"
                   >
                     Save

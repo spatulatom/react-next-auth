@@ -1,10 +1,12 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useContext } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import NotificationContext from '../../store/notification-context';
 
 import classes from './auth-form.module.css';
 
 async function createUser(email, password) {
+ 
   const response = await fetch('/api/auth/signup', {
     method: 'POST',
     body: JSON.stringify({ email, password }),
@@ -25,6 +27,7 @@ async function createUser(email, password) {
 function AuthForm() {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
+  const notificationCtx = useContext(NotificationContext);
 
   const [isLogin, setIsLogin] = useState(true);
   const router = useRouter();
@@ -43,6 +46,11 @@ function AuthForm() {
     // optional: Add validation
 
     if (isLogin) {
+      notificationCtx.showNotification({
+        title: 'Loging in...',
+        message: 'You are being logged in into your account on our website',
+        status: 'pending',
+      });
       const result = await signIn('credentials', {
         redirect: false,
         email: enteredEmail,
@@ -53,18 +61,44 @@ function AuthForm() {
       if (!result.error) {
         // set some auth state
         router.replace('/');
+        notificationCtx.showNotification({
+          title: 'Success!',
+          message: result.email || 'Your are logged in!',
+          status: 'success',
+        });
+        
+      }
+      if(result.error){
+        notificationCtx.showNotification({
+          title: 'Error!',
+          message: result.error || 'Something went wrong!',
+          status: 'error',
+        });
       }
     } else {
       try {
+        notificationCtx.showNotification({
+          title: 'Creating your account...',
+          message: 'Your account is currently being set up in a database.',
+          status: 'pending',
+        });
         const result = await createUser(enteredEmail, enteredPassword);
         console.log('result sign in', result);
         router.replace('/auth');
-        alert(result.message);
+        notificationCtx.showNotification({
+          title: 'Success!',
+          message: result.message || 'Your comment was saved!',
+          status: 'success',
+        });
         emailInputRef.current.value="";
         passwordInputRef.current.value="";
       } catch (error) {
         console.log(error);
-        alert(error);
+        notificationCtx.showNotification({
+          title: 'Error!',
+          message: error || 'Something went wrong!',
+          status: 'error',
+        });
       }
     }
   }

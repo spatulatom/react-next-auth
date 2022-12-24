@@ -41,7 +41,7 @@ export default NextAuth({
         }
 
         client.close();
-        return { email: user.email };
+        return { email: user.email, message: 'You are logged in!' };
         
       },
     }),

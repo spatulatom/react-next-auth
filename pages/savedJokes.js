@@ -17,16 +17,17 @@ export const getServerSideProps = async (context) => {
   const userEmail = session.user.email;
 
   const client = await connectToDatabase();
-
-  const usersCollection = client.db().collection('users');
-
-  const user = await usersCollection.findOne({ email: userEmail });
-
   if (!client) {
     return {
       props: { err: [{ err: 'Error connecting to the database!' }] },
     };
   }
+
+  const usersCollection = client.db().collection('users');
+
+  const user = await usersCollection.findOne({ email: userEmail });
+
+  
 
   if (!user) {
     client.close();

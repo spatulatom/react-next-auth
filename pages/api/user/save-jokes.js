@@ -20,6 +20,10 @@ async function handler(req, res) {
   const joke = req.body;
 
   const client = await connectToDatabase();
+  if (!client) {
+    res.status(404).json({ message: 'MongoDb connection error.' });
+    return;
+  }
 
   const usersCollection = client.db().collection('users');
 

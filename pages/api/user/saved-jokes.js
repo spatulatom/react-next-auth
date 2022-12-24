@@ -22,7 +22,6 @@ async function handler(req, res) {
   const client = await connectToDatabase();
   if (!client) {
     res.status(404).json({ message: 'Connection do MongoDb failed!' });
-    client.close();
     return;
   }
 

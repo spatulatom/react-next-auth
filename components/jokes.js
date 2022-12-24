@@ -54,15 +54,18 @@ export default function Jokes() {
         Accept: 'application/json',
       },
     };
-    
-      axios.get('https://icanhazdadjoke.com', config).then((res) => {
+
+    axios
+      .get('https://icanhazdadjoke.com', config)
+      .then((res) => {
         setJoke(res.data.joke);
         setIsLoading(false);
-      }).catch ((error)=> {
-      console.log('ERROR', error);
-      setIsLoading(false);
-      setError('Internal server error!');
-    })
+      })
+      .catch((error) => {
+        console.log('ERROR', error);
+        setIsLoading(false);
+        setError('Internal server error!');
+      });
   };
 
   useEffect(() => {
@@ -98,6 +101,7 @@ export default function Jokes() {
     setPanel3Active(true);
     getJoke();
   };
+  console.log('JOKE', joke)
   return (
     <section id="tabs">
       {/* abs/Panels Container */}
@@ -182,14 +186,25 @@ export default function Jokes() {
               {/* <p className="max-w-md text-center text-grayishBlue md:text-left">
               
             </p> */}
-              <div className="mx-auto md:mx-0">
-                <a
-                  onClick={saveJoke}
-                  className="px-6 cursor-pointer py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
-                >
-                  Save
-                </a>
-              </div>
+              {joke ? (
+                <div className="mx-auto md:mx-0">
+                  <a
+                    onClick={saveJoke}
+                    className="px-6 cursor-pointer py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
+                  >
+                    Save
+                  </a>
+                </div>
+              ) : (
+                <div className="mx-auto md:mx-0">
+                  <button disabled
+                    
+                    className="px-6 cursor-pointer py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue cursor-not-allowed"
+                  >
+                    Save
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 
@@ -216,14 +231,25 @@ export default function Jokes() {
               {/* <p className="max-w-md text-center text-grayishBlue md:text-left">
            {joke}
             </p> */}
-              <div className="mx-auto md:mx-0">
-                <a
-                  onClick={saveJoke}
-                  className="cursor-pointer px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
-                >
-                  Save
-                </a>
-              </div>
+                {joke ? (
+                <div className="mx-auto md:mx-0">
+                  <a
+                    onClick={saveJoke}
+                    className="px-6 cursor-pointer py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
+                  >
+                    Save
+                  </a>
+                </div>
+              ) : (
+                <div className="mx-auto md:mx-0">
+                  <button disabled
+                    
+                    className="px-6 cursor-pointer py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue cursor-not-allowed"
+                  >
+                    Save
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 
@@ -250,14 +276,25 @@ export default function Jokes() {
               {/* <p className="max-w-md text-center text-grayishBlue md:text-left">
             {joke}
             </p> */}
-              <div className="mx-auto md:mx-0">
-                <a
-                  onClick={saveJoke}
-                  className=" cursor-pointer px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
-                >
-                  Save
-                </a>
-              </div>
+                {joke ? (
+                <div className="mx-auto md:mx-0">
+                  <a
+                    onClick={saveJoke}
+                    className="px-6 cursor-pointer py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
+                  >
+                    Save
+                  </a>
+                </div>
+              ) : (
+                <div className="mx-auto md:mx-0">
+                  <button disabled
+                    
+                    className="px-6 cursor-pointer py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue cursor-not-allowed"
+                  >
+                    Save
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>

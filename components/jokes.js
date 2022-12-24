@@ -174,7 +174,7 @@ export default function Jokes() {
               <img
                 src="images/illustration-features-tab-1.svg"
                 alt=""
-                className="relative z-10"
+                className="relative"
               />
             </div>
             {/* Panel Content */}
@@ -219,7 +219,7 @@ export default function Jokes() {
               <img
                 src="images/illustration-features-tab-2.svg"
                 alt=""
-                className="relative z-10"
+                className="relative"
               />
             </div>
             {/* Panel Content */}
@@ -264,7 +264,7 @@ export default function Jokes() {
               <img
                 src="images/illustration-features-tab-3.svg"
                 alt=""
-                className="relative z-10"
+                className="relative"
               />
             </div>
             {/* Panel Content */}

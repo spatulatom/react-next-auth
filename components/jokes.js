@@ -18,8 +18,8 @@ export default function Jokes() {
 
   async function saveJoke() {
     notificationCtx.showNotification({
-      title: 'Sending comment...',
-      message: 'Your comment is currently being stored into a database.',
+      title: 'Seving joke...',
+      message: 'Your chosen joked is currently being stored into a database.',
       status: 'pending',
     });
 
@@ -35,7 +35,7 @@ export default function Jokes() {
       const data = await response.json();
       notificationCtx.showNotification({
         title: 'Success!',
-        message: 'Your comment was saved!',
+        message: 'Your chosen joke was saved! See more in Saved Jokes tab!',
         status: 'success',
       });
     } catch (error) {

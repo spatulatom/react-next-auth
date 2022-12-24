@@ -21,7 +21,7 @@ async function handler(req, res) {
 
   const client = await connectToDatabase();
   if (!client) {
-    res.status(404).json({ message: 'Connection do MongoDb failed!' });
+    res.status(404).json({ message: 'Error connecting to the database!' });
     return;
   }
 
@@ -29,19 +29,14 @@ async function handler(req, res) {
 
   const user = await usersCollection.findOne({ email: userEmail });
 
-
   if (!user) {
     res.status(404).json({ message: 'User not found.' });
     client.close();
     return;
   }
-  if (!user.jokes) {
-    res.status(404).json({ message: 'No saved jokes yet on your account.' });
-    client.close();
-    return;
-  }
-  if (user.jokes.length===0) {
-    console.log('NO LENGTH')
+
+  if (user.jokes.length === 0) {
+    console.log('NO LENGTH');
     res.status(404).json({ message: 'No saved jokes yet on your account.' });
     client.close();
     return;

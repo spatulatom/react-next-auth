@@ -19,23 +19,22 @@ export const getServerSideProps = async (context) => {
   const client = await connectToDatabase();
   if (!client) {
     return {
-      props: { err: [{ err: 'Error connecting to the database!' }] },
+      props: { err: 'Error connecting to the database!'}
     };
   }
 
   const usersCollection = client.db().collection('users');
+  
 
   const user = await usersCollection.findOne({ email: userEmail });
 
-  
-
   if (!user) {
     client.close();
-    return { err: [{ err: 'User not found.' }] };
+    return { props: {err: 'User not found.'} };
   }
   if (user.jokes.length === 0) {
     client.close();
-    return { props: { err: [{ err: 'No jokes yet' }] } };
+    return { props: { err: 'No saved jokes yet on your account.' } };
   }
 
   client.close();
@@ -52,7 +51,7 @@ export default function savedJokes(props) {
   const { data: session, status } = useSession();
   const router = useRouter();
   const [jokes, setJokes] = useState(props.message || []);
-  const [error, setError] = useState(props.err || []);
+  const [error, setError] = useState(props.err || '');
 
   if (status === 'unauthenticated') {
     router.replace('/');
@@ -74,17 +73,17 @@ export default function savedJokes(props) {
         setJokes(data);
       } else {
         const data = await response.json();
-        setError(data.message || [{ err: 'Something went wrong!' }]);
+        setError(data.message ||  'Something went wrong!');
       }
     } catch (err) {
       console.log('ERR', err);
       setError(
-        err.message || [{ err: 'Something went wrong with the server!' }]
+        err.message || 'Something went wrong with the server!'
       );
       alert(err);
     }
   }
- console.log('ERROR', error)
+  console.log('ERROR', error);
   if (status === 'authenticated') {
     if (jokes.length === 0 && error.length === 0) {
       return (
@@ -96,7 +95,7 @@ export default function savedJokes(props) {
     } else if (jokes.length === 0 && error.length !== 0) {
       return (
         <p className="max-w-lg px-6 py-8 mx-auto text-center text-gray-500">
-          {error[0].err}
+          {error}
         </p>
       );
     } else {

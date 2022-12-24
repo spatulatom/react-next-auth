@@ -24,6 +24,11 @@ async function handler(req, res) {
   }
 
   const client = await connectToDatabase();
+  if (!client) {
+    res.status(422).json({ message: 'Connection to MongoDb failed.' });
+    return;
+  }
+
 
   const db = client.db();
 

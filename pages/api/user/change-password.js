@@ -20,6 +20,10 @@ async function handler(req, res) {
   const newPassword = req.body.newPassword;
 
   const client = await connectToDatabase();
+  if (!client) {
+    res.status(404).json({ message: 'Connection to MongoDb failed.' });
+    return;
+  }
 
   const usersCollection = client.db().collection('users');
 

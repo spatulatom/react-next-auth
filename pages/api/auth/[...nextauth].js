@@ -15,6 +15,9 @@ export default NextAuth({
     CredentialsProvider({
       async authorize(credentials) {
         const client = await connectToDatabase();
+        if (!client) {
+          throw new Error('Connection to MongoDb failed!');
+        }
 
         const usersCollection = client.db().collection('users');
 

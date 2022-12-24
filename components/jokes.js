@@ -11,7 +11,8 @@ export default function Jokes() {
   const [panel2Active, setPanel2Active] = useState(false);
   const [panel3Active, setPanel3Active] = useState(false);
   const [joke, setJoke] = useState('');
-  const [loading, setIsLoading] = useState(true);
+  const [loading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const notificationCtx = useContext(NotificationContext);
 
@@ -22,32 +23,46 @@ export default function Jokes() {
       status: 'pending',
     });
 
-    console.log('joke', joke)
-    const response = await fetch('/api/user/save-jokes', {
-      method: 'POST',
-      body: JSON.stringify(joke),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    try {
+      const response = await fetch('/api/user/save-jokes', {
+        method: 'POST',
+        body: JSON.stringify(joke),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
-    const data = await response.json();
-    alert(data.message);
-    console.log(data);
+      const data = await response.json();
+      notificationCtx.showNotification({
+        title: 'Success!',
+        message: 'Your comment was saved!',
+        status: 'success',
+      });
+    } catch (error) {
+      notificationCtx.showNotification({
+        title: 'Error!',
+        message: error.message || 'Something went wrong!',
+        status: 'error',
+      });
+    }
   }
 
   const getJoke = async () => {
-    setIsLoading(true);
+    setIsLoading(false);
     const config = {
       headers: {
         Accept: 'application/json',
       },
     };
-
-    axios.get('https://icanhazdadjoke.com', config).then((res) => {
-      setJoke(res.data.joke);
-    });
-    setIsLoading(false);
+    
+      axios.get('https://icanhazdadjoke.com', config).then((res) => {
+        setJoke(res.data.joke);
+        setIsLoading(false);
+      }).catch ((error)=> {
+      console.log('ERROR', error);
+      setIsLoading(false);
+      setError('Internal server error!');
+    })
   };
 
   useEffect(() => {
@@ -162,12 +177,14 @@ export default function Jokes() {
             <div className="flex flex-col justify-around space-y-8 md:w-1/2">
               <h3 className="mt-4 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
                 {loading ? 'loading...' : joke}
+                {error ? error : null}
               </h3>
               {/* <p className="max-w-md text-center text-grayishBlue md:text-left">
               
             </p> */}
-              <div className="mx-auto md:mx-0" >
-                <a onClick={saveJoke}
+              <div className="mx-auto md:mx-0">
+                <a
+                  onClick={saveJoke}
                   className="px-6 cursor-pointer py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
                 >
                   Save
@@ -194,12 +211,14 @@ export default function Jokes() {
             <div className="flex flex-col justify-around space-y-8 md:w-1/2">
               <h3 className="mt-4 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
                 {loading ? 'loading...' : joke}
+                {error ? error : null}
               </h3>
               {/* <p className="max-w-md text-center text-grayishBlue md:text-left">
            {joke}
             </p> */}
-              <div className="mx-auto md:mx-0" >
-                <a onClick={saveJoke}
+              <div className="mx-auto md:mx-0">
+                <a
+                  onClick={saveJoke}
                   className="cursor-pointer px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
                 >
                   Save
@@ -226,12 +245,14 @@ export default function Jokes() {
             <div className="flex flex-col justify-around space-y-8 md:w-1/2">
               <h3 className="mt-4 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
                 {loading ? 'loading...' : joke}
+                {error ? error : null}
               </h3>
               {/* <p className="max-w-md text-center text-grayishBlue md:text-left">
             {joke}
             </p> */}
               <div className="mx-auto md:mx-0">
-                <a onClick={saveJoke}
+                <a
+                  onClick={saveJoke}
                   className=" cursor-pointer px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
                 >
                   Save

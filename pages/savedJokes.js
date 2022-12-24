@@ -19,18 +19,17 @@ export const getServerSideProps = async (context) => {
   const client = await connectToDatabase();
   if (!client) {
     return {
-      props: { err: 'Error connecting to the database!'}
+      props: { err: 'Error connecting to the database!' },
     };
   }
 
   const usersCollection = client.db().collection('users');
-  
 
   const user = await usersCollection.findOne({ email: userEmail });
 
   if (!user) {
     client.close();
-    return { props: {err: 'User not found.'} };
+    return { props: { err: 'User not found.' } };
   }
   if (user.jokes.length === 0) {
     client.close();
@@ -59,7 +58,7 @@ export default function savedJokes(props) {
 
   useEffect(() => {
     getSavedJokes();
-  }, []);
+  }, [jokes]);
 
   async function getSavedJokes() {
     const response = await fetch('/api/user/saved-jokes', {
@@ -73,14 +72,11 @@ export default function savedJokes(props) {
         setJokes(data);
       } else {
         const data = await response.json();
-        setError(data.message ||  'Something went wrong!');
+        throw new Error(data.message || 'Something went wrong!');
       }
     } catch (err) {
       console.log('ERR', err);
-      setError(
-        err.message || 'Something went wrong with the server!'
-      );
-      alert(err);
+      setError(err.message || 'Something went wrong with the server!');
     }
   }
   console.log('ERROR', error);
@@ -94,7 +90,7 @@ export default function savedJokes(props) {
       );
     } else if (jokes.length === 0 && error.length !== 0) {
       return (
-        <p className="max-w-lg px-6 py-8 mx-auto text-center text-gray-500">
+        <p className="max-w-lg px-6 py-8 mx-auto mt-8 text-center bg-red-300 text-gray-500">
           {error}
         </p>
       );

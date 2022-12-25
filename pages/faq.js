@@ -157,7 +157,7 @@ export default function Faq() {
               <div className="flex items-center justify-between py-3 text-gray-500 transition duration-500 cursor-pointer group ease">
                 {/* Tab Title */}
                 <div className="transition duration-500 ease group-hover:text-red-500">
-                  What about other Chromium browsers
+                  Is your laugh genetic?
                 </div>
                 {/* Arrow */}
                 <div className="transition duration-500 ease group-focus:-rotate-180 group-focus:text-red-500">
@@ -179,10 +179,11 @@ export default function Faq() {
               {/* Tab Inner Content */}
               <div className="overflow-hidden transition duration-500 group-focus:max-h-screen max-h-0 ease">
                 <p className="py-2 text-justify text-gray-400">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Fugiat, repellat amet doloribus consequuntur eos similique
-                  provident tempora voluptates iure quia fuga dicta voluptatibus
-                  culpa mollitia recusandae delectus id suscipit labore?
+                  Genes you inherit may play a role in your laugh being somewhat
+                  similar to your parents', but you're also growing up with them
+                  and listening to them laughing, and we're a very imitative
+                  species. There's no way you could drill down and say we have
+                  identified that 10 percent of your laugh came from your DNA.
                 </p>
               </div>
             </div>

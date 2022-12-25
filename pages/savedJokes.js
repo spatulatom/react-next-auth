@@ -53,7 +53,6 @@ export default function savedJokes(props) {
   const [jokes, setJokes] = useState(props.message || []);
   const [error, setError] = useState(props.err || '');
 
-
   useEffect(() => {
     if (status !== 'authenticated') {
       router.replace('/');
@@ -85,8 +84,9 @@ export default function savedJokes(props) {
   if (jokes.length === 0 && error.length === 0) {
     return (
       <p className="max-w-lg px-6 py-8 mx-auto text-center text-gray-500">
-        Here are some of our FAQs. If you have any other questions you'd like
-        answered please feel free to email us
+        Here is a palce for your saved jokes to brighten up your day! Go to the
+        home page and click 'Save' under a joke you like to have it bookmarked
+        below.
       </p>
     );
   } else if (jokes.length === 0 && error.length !== 0) {
@@ -106,8 +106,8 @@ export default function savedJokes(props) {
               Your bookmarked jokes
             </h2>
             <p className="max-w-lg px-6 mx-auto text-center text-gray-500">
-              Here are some of our FAQs. If you have any other questions you'd
-              like answered please feel free to email us.
+              Here are your saved jokes so you can always have a quick look at
+              those that made you laugh!
             </p>
           </div>
         </section>
@@ -125,7 +125,7 @@ export default function savedJokes(props) {
                   <div className="flex items-center justify-between py-3 text-gray-500 cursor-pointer group">
                     {/* Tab Title */}
                     <div className="transition duration-500 ease group-hover:text-red-500">
-                      Check this one out
+                      Saved joke 
                     </div>
                     {/* Arrow */}
                     <div className="transition duration-500 ease group-focus:-rotate-180 group-focus:text-red-500">

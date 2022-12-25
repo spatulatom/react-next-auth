@@ -121,7 +121,7 @@ export default function Faq() {
               <div className="flex items-center justify-between py-3 text-gray-500 transition duration-500 cursor-pointer group ease">
                 {/* Tab Title  */}
                 <div className="transition duration-500 ease group-hover:text-red-500">
-                  Is there a mobile app?
+                  What happens if I laugh too hard?
                 </div>
                 {/* Arrow */}
                 <div className="transition duration-500 ease group-focus:-rotate-180 group-focus:text-red-500">
@@ -143,10 +143,10 @@ export default function Faq() {
               {/* Tab Inner Content */}
               <div className="overflow-hidden transition duration-500 group-focus:max-h-screen max-h-0 ease">
                 <p className="py-2 text-justify text-gray-400">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Fugiat, repellat amet doloribus consequuntur eos similique
-                  provident tempora voluptates iure quia fuga dicta voluptatibus
-                  culpa mollitia recusandae delectus id suscipit labore?
+                  About 5000 studies were reviewed t and found out that too much
+                  laughter can cause fainting, asthma attacks, "protrusion of
+                  abdominal hernias," headaches, incontinence, jaw dislocation,
+                  and arrhythmia.
                 </p>
               </div>
             </div>

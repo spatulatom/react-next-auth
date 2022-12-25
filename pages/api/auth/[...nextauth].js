@@ -1,16 +1,15 @@
 import NextAuth from 'next-auth';
-import CredentialsProvider from "next-auth/providers/credentials"
+import CredentialsProvider from 'next-auth/providers/credentials';
 
 import { verifyPassword } from '../../../lib/auth';
 import { connectToDatabase } from '../../../lib/db';
 
 export default NextAuth({
- 
   secret: process.env.AUTH_SECRET,
   session: {
     jwt: true,
   },
-  
+
   providers: [
     CredentialsProvider({
       async authorize(credentials) {
@@ -24,10 +23,10 @@ export default NextAuth({
         const user = await usersCollection.findOne({
           email: credentials.email,
         });
-        console.log('LOG IN');
+
         if (!user) {
           client.close();
-          throw new Error('No user found!');
+          throw new Error('No user found! Email invalid!');
         }
 
         const isValid = await verifyPassword(
@@ -37,12 +36,11 @@ export default NextAuth({
 
         if (!isValid) {
           client.close();
-          throw new Error('Could not log you in!');
+          throw new Error('Could not log you in! Password invalid!');
         }
 
         client.close();
         return { email: user.email, message: 'You are logged in!' };
-        
       },
     }),
   ],

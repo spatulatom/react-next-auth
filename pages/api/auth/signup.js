@@ -29,7 +29,6 @@ async function handler(req, res) {
     return;
   }
 
-
   const db = client.db();
 
   const existingUser = await db.collection('users').findOne({ email: email });
@@ -42,10 +41,10 @@ async function handler(req, res) {
 
   const hashedPassword = await hashPassword(password);
 
-  const result = await db.collection('users').insertOne({
+  await db.collection('users').insertOne({
     email: email,
     password: hashedPassword,
-    jokes: []
+    jokes: [],
   });
 
   res.status(201).json({ message: 'Created user! You can log in now!' });

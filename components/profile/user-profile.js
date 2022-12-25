@@ -1,7 +1,12 @@
 import ProfileForm from './profile-form';
 import classes from './user-profile.module.css';
+import { getSession } from 'next-auth/react';
+import { useContext } from 'react';
+import NotificationContext from '../../store/notification-context';
 
-function UserProfile() {
+function UserProfile(props) {
+  const notificationCtx = useContext(NotificationContext);
+
   // const [isLoading, setIsLoading] = useState(true);
 
   // useEffect(() => {
@@ -19,22 +24,44 @@ function UserProfile() {
   // }
 
   async function changePasswordHandler(passwordData) {
-    const response = await fetch('/api/user/change-password', {
-      method: 'PATCH',
-      body: JSON.stringify(passwordData),
-      headers: {
-        'Content-Type': 'application/json'
-      }
+    notificationCtx.showNotification({
+      title: 'Changing your password...',
+      message: 'Your password is being updated in the database!',
+      status: 'pending',
     });
 
-    const data = await response.json();
-alert(data.message)
-    console.log(data);
+    try {
+      const response = await fetch('/api/user/change-password', {
+        method: 'POST',
+        body: JSON.stringify(passwordData),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        notificationCtx.showNotification({
+          title: 'Success!',
+          message: data.message || 'Your password has been updated!',
+          status: 'success',
+        });
+      } else {
+        throw new Error(data.message);
+      }
+    } catch (err) {
+      notificationCtx.showNotification({
+        title: 'Error!',
+        message: err.message || 'Something went wrong!',
+        status: 'error',
+      });
+    }
   }
 
   return (
     <section className={classes.profile}>
       <h1>Your User Profile</h1>
+      <h2>Your email: {props.email}</h2>
       <ProfileForm onChangePassword={changePasswordHandler} />
     </section>
   );

@@ -63,7 +63,7 @@ function AuthForm() {
         router.replace('/');
         notificationCtx.showNotification({
           title: 'Success!',
-          message: result.email || 'Your are logged in!',
+          message: 'Your are logged in!',
           status: 'success',
         });
         
@@ -83,7 +83,7 @@ function AuthForm() {
           status: 'pending',
         });
         const result = await createUser(enteredEmail, enteredPassword);
-        console.log('result sign in', result);
+      
         router.replace('/auth');
         notificationCtx.showNotification({
           title: 'Success!',
@@ -93,10 +93,9 @@ function AuthForm() {
         emailInputRef.current.value="";
         passwordInputRef.current.value="";
       } catch (error) {
-        console.log(error);
         notificationCtx.showNotification({
           title: 'Error!',
-          message: error || 'Something went wrong!',
+          message: error.message || 'Something went wrong!',
           status: 'error',
         });
       }

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Jokes from '../components/jokes';
+import Jokes from '../components/ui/jokes';
 import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
@@ -9,7 +9,7 @@ import { Fragment } from 'react';
 export default function kkks() {
   const { data: session, status } = useSession();
   const router = useRouter();
-  
+
   return (
     <Fragment>
       <Head>
@@ -20,40 +20,39 @@ export default function kkks() {
         />
       </Head>
       <div className="overflow-x-hidden">
-    
-
         {/* Features Heading */}
-        {status === 'authenticated'? 
-        <section id="features">
-          <div className="container mx-auto mt-16 px-6">
-            <h2 className="mb-6 text-4xl font-semibold text-center">
-              Features
-            </h2>
-            <p className="max-w-md mx-auto text-center text-grayishBlue">
-              Our aim is to make it quick and easy for you to access your
-              favourite websites. Your bookmarks sync between your devices so
-              you can access them on the go.
-            </p>
-          </div>
-        </section> : null}
-        
+        {status === 'authenticated' ? (
+          <section id="features">
+            <div className="container mx-auto mt-16 px-6">
+              <h2 className="mb-6 text-4xl font-semibold text-center">
+                Features
+              </h2>
+              <p className="max-w-md mx-auto text-center text-grayishBlue">
+                Laughter can increase your oxygen intake, which can in turn
+                stimulate your heart, lungs, and muscles. Laughing further
+                releases endorphins, the feel-good chemicals our bodies produce
+                to make us feel happy and even relieve pain or stress.
+              </p>
+            </div>
+          </section>
+        ) : null}
 
         {/* Features Tabs */}
         {status === 'authenticated' ? <Jokes /> : null}
 
-            {/* Hero Section */}
-            <section id="hero">
+        {/* Hero Section */}
+        <section id="hero">
           {/* Container For Image & Content */}
           <div className="container flex flex-col-reverse mx-auto p-6 lg:flex-row lg:mb-0">
             {/* Content */}
             <div className="flex flex-col space-y-10 lg:mt-16 lg:w-1/2">
               <h1 className="text-3xl font-semibold text-center lg:text-6xl lg:text-left">
-                A Simple Bookmark Manager
+                A Joke Bookmark Manager
               </h1>
               <p className="max-w-md mx-auto text-lg text-center text-gray-400 lg:text-2xl lg:text-left lg:mt-0 lg:mx-0">
                 A clean and simple interface to organize your favourite
-                websites. Open a new browser tab and see your sites load
-                instantly. Try it for free.
+                jokes. 
+                Save favourite jokes on your account and come back any time to lift up your mood!
               </p>
 
               {/* Buttons Container */}
@@ -62,13 +61,13 @@ export default function kkks() {
                   href="#"
                   className="p-4 text-sm font-semibold text-white bg-blue-600 rounded shadow-md border-2 border-softBlue md:text-base hover:bg-white hover:text-blue-500"
                 >
-                  Get It On Chrome
+                  Lorem Ipsum
                 </a>
                 <a
                   href="#"
                   className="p-4 text-sm font-semibold text-black bg-gray-300 rounded shadow-md border-2 border-gray-300 md:text-base hover:bg-white hover:text-gray-600"
                 >
-                  Get It On Firefox
+                  Lorem Ipsum
                 </a>
               </div>
             </div>
@@ -85,94 +84,9 @@ export default function kkks() {
           </div>
         </section>
 
-        {/* Download Heading */}
-        <section id="download">
-          <div className="container mx-auto px-6">
-            <h2 className="mb-6 text-3xl font-semibold text-center md:text-4xl">
-              Download the extension
-            </h2>
-            <p className="max-w-lg mx-auto text-center text-grayishBlue">
-              We've got more browsers in the pipeline. Please do let us know if
-              you've got a favourite you'd like us to prioritize.
-            </p>
-          </div>
-        </section>
-
-        {/* Download Boxes */}
-        <section id="download-boxes" className="py-32">
-          {/* Boxes Container */}
-          <div className="relative flex flex-col items-center container mx-auto space-y-10 px-10 md:px-6 md:space-y-0 md:space-x-7 md:flex-row">
-            {/* Box 1 */}
-            <div className="flex flex-col w-full py-6 space-y-4 text-center rounded-lg shadow-lg md:w-1/3">
-              {/* Image */}
-              <div className="flex justify-center">
-                <img src="images/logo-chrome.svg" alt="" />
-              </div>
-              {/* Text */}
-              <h5 className="pt-6 text-xl font-bold">Add to Chrome</h5>
-              <p className="text-gray-400">Minimum Version 62</p>
-
-              {/* Dots */}
-              <div className="bg-dots bg-repeat-x px-6 pt-6 capitalize">
-                <a
-                  href="#"
-                  className="block w-full py-3 text-white duration-200 border-2 rounded-lg bg-blue-500 hover:text-softBlue hover:bg-white border-blue-500"
-                >
-                  Add & Install Extension
-                </a>
-              </div>
-            </div>
-
-            {/* Box 2 */}
-            <div className="w-full md:w-1/3">
-              <div className="flex flex-col w-full py-6 space-y-4 text-center rounded-lg shadow-lg md:mt-8">
-                {/* Image */}
-                <div className="flex justify-center">
-                  <img src="images/logo-firefox.svg" alt="" />
-                </div>
-                {/* Text */}
-                <h5 className="pt-6 text-xl font-bold">Add to Firefox</h5>
-                <p className="text-gray-400">Minimum Version 55</p>
-
-                {/* Dots */}
-                <div className="bg-dots bg-repeat-x px-6 pt-6 capitalize">
-                  <a
-                    href="#"
-                    className="block w-full py-3 text-white duration-200 border-2 rounded-lg bg-blue-500 hover:text-blue-500 hover:bg-white border-softBlue"
-                  >
-                    Add & Install Extension
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Box 3 */}
-            <div className="w-full md:w-1/3">
-              <div className="flex flex-col w-full py-6 space-y-4 text-center rounded-lg shadow-lg md:mt-16">
-                {/* Image */}
-                <div className="flex justify-center">
-                  <img src="images/logo-opera.svg" alt="" />
-                </div>
-                {/* Text */}
-                <h5 className="pt-6 text-xl font-bold">Add to Opera</h5>
-                <p className="text-gray-400">Minimum Version 46</p>
-
-                {/* Dots */}
-                <div className="bg-dots bg-repeat-x px-6 pt-6 capitalize">
-                  <a
-                    href="#"
-                    className="block w-full py-3 text-white duration-200 border-2 rounded-lg bg-blue-500 hover:text-softBlue hover:bg-white border-blue-500"
-                  >
-                    Add & Install Extension
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+      
 
         {/* FAQ Heading */}
-      
 
         {/* Newsletter Section */}
         <section id="newsletter" className="bg-blue-600">
@@ -182,7 +96,8 @@ export default function kkks() {
               35,000+ Already Joined
             </p>
             <h2 className="px-3 mb-6 text-3xl font-semibold text-center text-white md:text-4xl">
-              Stay up-to-date with what we're doing
+            
+
             </h2>
 
             {/* Form */}
@@ -196,9 +111,9 @@ export default function kkks() {
                 />
 
                 <input
-                  type="submit"
+                  // type="submit"
                   className="inline-flex px-6 py-3 font-semibold text-center text-white duration-200 transform rounded-lg cursor-pointer focus:outline-none bg-red-500 hover:opacity-90"
-                  value="Contact Us"
+                  value="Lorem Ipsum"
                 />
               </div>
             </form>

@@ -4,30 +4,34 @@ import UserProfile from '../components/profile/user-profile';
 import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 
-function ProfilePage() {
-  const { data: session, status } = useSession();
+function ProfilePage(props) {
   const router = useRouter();
+  const {data:session} = useSession();
 
-  console.log('router', router);
-  if (status === 'authenticated') {
-    return (
-      <Fragment>
-        <Head>
-          <title>User Profile</title>
-          <meta
-            name="description"
-            content="See your details/change your password!"
-          />
-        </Head>
-        <UserProfile />
-      </Fragment>
-    );
-  }
-  if (status === 'unauthenticated') {
-    router.replace('/');
-  }
+  useEffect(() => {
+    getSession().then((session) => {
+      if (session) {
+        router.replace('/profile');
+      } else {
+        router.replace('/');
+      }
+    });
+  }, []);
+
+  return (
+    <Fragment>
+      <Head>
+        <title>User Profile</title>
+        <meta
+          name="description"
+          content="See your details/change your password!"
+        />
+      </Head>
+      <UserProfile email={props.email} />
+    </Fragment>
+  );
 }
 
 // export async function getServerSideProps(context) {
@@ -47,5 +51,23 @@ function ProfilePage() {
 //     props: { session },
 //   };
 // }
+
+export const getServerSideProps = async (context) => {
+  const { req, res } = context;
+  const session = await getSession({ req: req });
+
+  if (!session) {
+    return {
+      props: { email: 'Error getting your email address from database!' },
+    };
+  }
+
+  const userEmail = session.user.email;
+  console.log('USER EMAIL', userEmail);
+
+  return {
+    props: { email: userEmail },
+  };
+};
 
 export default ProfilePage;

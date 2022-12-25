@@ -4,7 +4,7 @@ import { hashPassword, verifyPassword } from '../../../lib/auth';
 import { connectToDatabase } from '../../../lib/db';
 
 async function handler(req, res) {
-  if (req.method !== 'PATCH') {
+  if (req.method !== 'POST') {
     return;
   }
 
@@ -53,7 +53,7 @@ async function handler(req, res) {
   );
 
   client.close();
-  res.status(200).json({ message: 'Password updated!' });
+  res.status(201).json({ message: 'Password updated!' });
 }
 
 export default handler;

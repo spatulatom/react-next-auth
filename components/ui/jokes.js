@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import NotificationContext from '../store/notification-context';
+import NotificationContext from '../../store/notification-context';
 
 export default function Jokes() {
   const [tab1Active, setTab1] = useState(true);
@@ -33,11 +33,17 @@ export default function Jokes() {
       });
 
       const data = await response.json();
-      notificationCtx.showNotification({
-        title: 'Success!',
-        message: 'Your chosen joke was saved! See more in Saved Jokes tab!',
-        status: 'success',
-      });
+      if (response.ok) {
+        notificationCtx.showNotification({
+          title: 'Success!',
+          message:
+            data.message ||
+            'Your chosen joke was saved! See more in Saved Jokes tab!',
+          status: 'success',
+        });
+      } else {
+        throw new Error(data.message);
+      }
     } catch (error) {
       notificationCtx.showNotification({
         title: 'Error!',
@@ -122,7 +128,7 @@ export default function Jokes() {
               }`}
               data-target="panel-1"
             >
-              Simple Bookmarking
+              Simply funny
             </div>
           </div>
 
@@ -139,7 +145,7 @@ export default function Jokes() {
               }`}
               data-target="panel-2"
             >
-              Speedy Searching
+              Speedy laugh
             </div>
           </div>
 
@@ -156,7 +162,7 @@ export default function Jokes() {
               }`}
               data-target="panel-3"
             >
-              Easy Sharing
+              Don't laugh challenge
             </div>
           </div>
         </div>
@@ -182,9 +188,13 @@ export default function Jokes() {
               <h3 className="mt-4 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
                 {loading ? 'loading...' : joke}
               </h3>
-             
-                {error ?  <p className="max-w-md text-center py-4 text-white bg-red-400">error</p> : null}
-            
+
+              {error ? (
+                <p className="max-w-md text-center py-4 text-white bg-red-400">
+                  error
+                </p>
+              ) : null}
+
               {joke ? (
                 <div className="mx-auto md:mx-0">
                   <a
@@ -226,7 +236,11 @@ export default function Jokes() {
               <h3 className="mt-4 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
                 {loading ? 'loading...' : joke}
               </h3>
-              {error ?  <p className="max-w-md text-center py-4 text-white bg-red-400">error</p> : null}
+              {error ? (
+                <p className="max-w-md text-center py-4 text-white bg-red-400">
+                  error
+                </p>
+              ) : null}
               {joke ? (
                 <div className="mx-auto md:mx-0">
                   <a
@@ -268,7 +282,11 @@ export default function Jokes() {
               <h3 className="mt-4 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
                 {loading ? 'loading...' : joke}
               </h3>
-               {error ?  <p className="max-w-md text-center py-4 text-white bg-red-400">error</p> : null}
+              {error ? (
+                <p className="max-w-md text-center py-4 text-white bg-red-400">
+                  error
+                </p>
+              ) : null}
               {joke ? (
                 <div className="mx-auto md:mx-0">
                   <a

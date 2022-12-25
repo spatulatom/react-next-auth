@@ -1,7 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 
 export default function Footer() {
+  const { data: session, status } = useSession();
   return (
     <footer className="py-16 bg-veryDarkBlue ">
       {/* Footer Flex Container */}
@@ -16,31 +18,36 @@ export default function Footer() {
               className="mb-1 cursor-pointer hover: text-red-500"
             />
           </Link>
-
-          <Link href="">
-            <span
-              href="#download"
-              className="uppercase hover:text-red-500 cursor-pointer"
-            >
-              Saved Jokes
-            </span>
-          </Link>
-          <Link href="">
-            <span
-              href="#faq"
-              className="uppercase hover:text-red-500 cursor-pointer"
-            >
-              FAQ
-            </span>
-          </Link>
-          <Link href="">
-            <span
-              href="#features"
-              className="uppercase hover:text-red-500 cursor-pointer"
-            >
-              Profile
-            </span>
-          </Link>
+          {status === 'authenticated' && (
+            <Link href="/savedJokes">
+              <span
+                href="#download"
+                className="uppercase hover:text-red-500 cursor-pointer"
+              >
+                Saved Jokes
+              </span>
+            </Link>
+          )}
+          {status === 'authenticated' && (
+            <Link href="/faq">
+              <span
+                href="#faq"
+                className="uppercase hover:text-red-500 cursor-pointer"
+              >
+                FAQ
+              </span>
+            </Link>
+          )}
+          {status === 'authenticated' && (
+            <Link href="/profile">
+              <span
+                href="#features"
+                className="uppercase hover:text-red-500 cursor-pointer"
+              >
+                Profile
+              </span>
+            </Link>
+          )}
         </div>
 
         {/* Social Container */}

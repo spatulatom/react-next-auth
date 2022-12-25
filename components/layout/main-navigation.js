@@ -6,7 +6,6 @@ import NotificationContext from '../../store/notification-context';
 function MainNavigation() {
   const [showMobile, setShowMobile] = useState(false);
   const { data: session, status } = useSession();
-  console.log('loading', session, 'session', status);
   const notificationCtx = useContext(NotificationContext);
 
   function logoutHandler() {

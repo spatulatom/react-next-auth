@@ -21,7 +21,7 @@ async function handler(req, res) {
 
   const client = await connectToDatabase();
   if (!client) {
-    res.status(404).json({ message: 'MongoDb connection error.' });
+    res.status(404).json({ message: 'Error connecting to MongoDb.' });
     return;
   }
 
@@ -45,6 +45,7 @@ async function handler(req, res) {
 
   client.close();
   res.status(200).json({ message: 'Joke saved' });
+  
 }
 
 export default handler;

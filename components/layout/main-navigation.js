@@ -14,17 +14,15 @@ function MainNavigation() {
       message: 'You are being loggout ot of your account!',
       status: 'pending',
     });
-    setTimeout(()=>{
+    setTimeout(() => {
       signOut();
       notificationCtx.showNotification({
         title: 'Success!',
         message: 'You have been signed out. Come back again!',
         status: 'success',
       });
-    },2000)
-  
-  
-  
+    }, 2000);
+
     handleMobileMenu();
   }
 
@@ -109,7 +107,7 @@ function MainNavigation() {
         id="menu"
         className={`${
           showMobile ? 'flex' : 'hidden'
-        } text-white space-y-5 fixed inset-0 z-20 flex-col items-center self-end w-full h-full m-h-screen px-6 py-1 pt-24 pb-4 tracking-widest uppercase divide-y divide-gray-500 opacity-90 bg-veryDarkBlue md: hidden`}
+        } text-white space-y-5 fixed inset-0 z-20 flex-col items-center self-end w-full h-full m-h-screen px-6 py-1 pt-24 pb-4 tracking-widest uppercase divide-y divide-gray-500 opacity-90 bg-veryDarkBlue md:hidden`}
       >
         {status === 'authenticated' && (
           <div className="w-full py-3 text-center">

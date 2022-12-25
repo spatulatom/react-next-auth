@@ -142,6 +142,17 @@ function MainNavigation() {
             </Link>
           </div>
         )}
+        {status === 'authenticated' && (
+          <div className="w-full py-3 text-center">
+            <Link
+              href="/profile"
+              className="block hover:text-softRed"
+              onClick={handleMobileMenu}
+            >
+              Profile
+            </Link>
+          </div>
+        )}
         {!session && status !== 'loading' && (
           <div className="w-full py-3 text-center">
             <Link

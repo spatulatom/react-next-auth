@@ -6,18 +6,18 @@ import { getSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 
 export default function Faq() {
-    const [isLoading, setIsLoading] = useState(true);
-    const router = useRouter();
-  
-    useEffect(() => {
-      getSession().then((session) => {
-        if (session) {
-          router.replace('/faq');
-        } else {
-          router.replace('/')
-        }
-      });
-    }, []);
+  const [isLoading, setIsLoading] = useState(true);
+  const router = useRouter();
+
+  useEffect(() => {
+    getSession().then((session) => {
+      if (session) {
+        router.replace('/faq');
+      } else {
+        router.replace('/');
+      }
+    });
+  }, []);
 
   return (
     <Fragment>
@@ -48,7 +48,7 @@ export default function Faq() {
               <div className="flex items-center justify-between py-3 text-gray-500 cursor-pointer group">
                 {/* Tab Title */}
                 <div className="transition duration-500 ease group-hover:text-red-500">
-                  What is Bookmark?
+                  What is a Joke Bookmark?
                 </div>
                 {/* Arrow */}
                 <div className="transition duration-500 ease group-focus:-rotate-180 group-focus:text-red-500">
@@ -70,10 +70,9 @@ export default function Faq() {
               {/* Tab Inner Content */}
               <div className="overflow-hidden duration-500 group-focus:max-h-screen max-h-0 ease">
                 <p className="py-2 text-justify text-gray-400">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Fugiat, repellat amet doloribus consequuntur eos similique
-                  provident tempora voluptates iure quia fuga dicta voluptatibus
-                  culpa mollitia recusandae delectus id suscipit labore?
+                  A clean and simple interface to organize your favourite jokes.
+                  Save favourite jokes on your account and come back any time to
+                  lift up your mood!
                 </p>
               </div>
             </div>
@@ -84,7 +83,7 @@ export default function Faq() {
               <div className="flex items-center justify-between py-3 text-gray-500 transition duration-500 cursor-pointer group ease">
                 {/* Tab Title */}
                 <div className="transition duration-500 ease group-hover:text-red-500">
-                  How can I request a new browser?
+                  Does laughing affect the heart?
                 </div>
                 {/* Arrow */}
                 <div className="transition duration-500 ease group-focus:-rotate-180 group-focus:text-red-500">
@@ -106,10 +105,12 @@ export default function Faq() {
               {/* Tab Inner Content */}
               <div className="overflow-hidden transition duration-500 group-focus:max-h-screen max-h-0 ease">
                 <p className="py-2 text-justify text-gray-400">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Fugiat, repellat amet doloribus consequuntur eos similique
-                  provident tempora voluptates iure quia fuga dicta voluptatibus
-                  culpa mollitia recusandae delectus id suscipit labore?
+                  When you laugh, your heart rate increases, and you take many
+                  deep breaths. This mean that more oxygenated blood is
+                  circulated through your body – improving your vascular
+                  function. Prevents heart disease. Improved vascular function
+                  and circulation can also help reduce your risk of a heart
+                  disease diagnosis.
                 </p>
               </div>
             </div>

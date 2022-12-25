@@ -187,6 +187,42 @@ export default function Faq() {
                 </p>
               </div>
             </div>
+            {/* Tab 5 */}
+            <div className="py-1 border-b outline-none group" tabindex="5">
+              {/* Tab Flex Container */}
+              <div className="flex items-center justify-between py-3 text-gray-500 transition duration-500 cursor-pointer group ease">
+                {/* Tab Title */}
+                <div className="transition duration-500 ease group-hover:text-red-500">
+                  Does laughing cause weight gain?
+                </div>
+                {/* Arrow */}
+                <div className="transition duration-500 ease group-focus:-rotate-180 group-focus:text-red-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="12"
+                  >
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      d="M1 1l8 8 8-8"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Tab Inner Content */}
+              <div className="overflow-hidden transition duration-500 group-focus:max-h-screen max-h-0 ease">
+                <p className="py-2 text-justify text-gray-400">
+                  Laughter is said to reduce the levels of stress hormone known
+                  as cortisol that lowers the metabolism rate and stores fat in
+                  the mid-section. Laughter tends to improve your metabolism
+                  naturally, which influences your body to burn more calories
+                  and lose weight.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

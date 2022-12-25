@@ -17,7 +17,7 @@ export function NotificationContextProvider(props) {
     ) {
       const timer = setTimeout(() => {
         setActiveNotification(null);
-      }, 4000);
+      }, 3000);
  
       // if useEffect reruns before the timer goes off
       // to avoid multiple setTimeot running we do the 

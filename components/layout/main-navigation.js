@@ -9,19 +9,12 @@ function MainNavigation() {
   const notificationCtx = useContext(NotificationContext);
 
   function logoutHandler() {
+    signOut();
     notificationCtx.showNotification({
-      title: 'Signing out...',
-      message: 'You are being loggout ot of your account!',
-      status: 'pending',
+      title: 'Success!',
+      message: 'You have been signed out. Come back again!',
+      status: 'success',
     });
-    setTimeout(() => {
-      signOut();
-      notificationCtx.showNotification({
-        title: 'Success!',
-        message: 'You have been signed out. Come back again!',
-        status: 'success',
-      });
-    }, 2000);
 
     handleMobileMenu();
   }

@@ -10,7 +10,7 @@ function Notification(props) {
   let statusClasses = '';
 
   if (status === 'success') {
-    statusClasses = 'bg-veryDarkBlue';
+    statusClasses = 'bg-green-600';
   }
 
   if (status === 'error') {
@@ -18,12 +18,12 @@ function Notification(props) {
   }
 
   if (status === 'pending') {
-    statusClasses = 'bg-veryDarkBlue';
+    statusClasses = 'bg-stone-600';
   }
 
   return (
     <div
-      className={`flex flex-col fixed container left-0 bottom-0 min-w-full justify-between items-center text-white p-4 px-8 md:px-4 min-h-max md:flex-row ${statusClasses}`}
+      className={`flex flex-col fixed container bg- left-0 bottom-0 min-w-full justify-between items-center text-white p-4 px-8 md:px-4 min-h-max md:flex-row ${statusClasses}`}
       onClick={notificationCtx.hideNotification}
     >
       <h2>{title}</h2>

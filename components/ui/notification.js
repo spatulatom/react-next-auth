@@ -11,20 +11,24 @@ function Notification(props) {
   let statusClasses = '';
 
   if (status === 'success') {
-    statusClasses = "bg-veryDarkBlue"}
+    statusClasses = 'bg-veryDarkBlue';
+  }
 
   if (status === 'error') {
-    statusClasses = "bg-red-400"
+    statusClasses = 'bg-red-400';
   }
 
   if (status === 'pending') {
-    statusClasses = "bg-blue-500";
+    statusClasses = 'bg-blue-500';
   }
 
-  const activeClasses = `${classes.notification} ${statusClasses}`;
+  const activeClasses = `flex flex-col fixed left-0 bottom-0 min-w-full justify-between items-center text-white p-4 min-h-max md:flex-row ${statusClasses}`;
 
   return (
-    <div className={activeClasses} onClick={notificationCtx.hideNotification}>
+    <div
+      className= {activeClasses}
+      onClick={notificationCtx.hideNotification}
+    >
       <h2>{title}</h2>
       <p>{message}</p>
     </div>

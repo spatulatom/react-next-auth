@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import NotificationContext from '../../store/notification-context';
+import {ImSpinner2} from  'react-icons';
 
 export default function Jokes() {
   const [tab1Active, setTab1] = useState(true);
@@ -54,7 +55,7 @@ export default function Jokes() {
   }
 
   const getJoke = async () => {
-    setIsLoading(false);
+    setIsLoading(true);
     const config = {
       headers: {
         Accept: 'application/json',
@@ -128,7 +129,7 @@ export default function Jokes() {
               }`}
               data-target="panel-1"
             >
-              Simply funny
+              Simply funny 
             </div>
           </div>
 
@@ -147,6 +148,7 @@ export default function Jokes() {
             >
               Speedy laugh
             </div>
+            
           </div>
 
           {/* Tab 3 */}
@@ -186,7 +188,7 @@ export default function Jokes() {
             {/* Panel Content */}
             <div className="flex flex-col justify-around space-y-8 md:w-1/2">
               <h3 className="mt-4 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
-                {loading ? 'loading...' : joke}
+                {loading ? <div className="text-center"><i class="fa-solid fa-spinner fa-spin"></i></div> : joke}
               </h3>
 
               {error ? (
@@ -234,7 +236,7 @@ export default function Jokes() {
             {/* Panel Content */}
             <div className="flex flex-col justify-around space-y-8 md:w-1/2">
               <h3 className="mt-4 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
-                {loading ? 'loading...' : joke}
+                {loading ? <div className="text-center"><i class="fa-solid fa-spinner fa-spin"></i></div> : joke}
               </h3>
               {error ? (
                 <p className="max-w-md text-center py-4 text-white bg-red-400">
@@ -280,7 +282,7 @@ export default function Jokes() {
             {/* Panel Content */}
             <div className="flex flex-col justify-around space-y-8 md:w-1/2">
               <h3 className="mt-4 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
-                {loading ? 'loading...' : joke}
+                {loading ? <div className="text-center"><i class="fa-solid fa-spinner fa-spin"></i></div> : joke}
               </h3>
               {error ? (
                 <p className="max-w-md text-center py-4 text-white bg-red-400">

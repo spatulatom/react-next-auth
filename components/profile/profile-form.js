@@ -1,7 +1,5 @@
 import { useRef } from 'react';
 
-import classes from './profile-form.module.css';
-
 function ProfileForm(props) {
   const oldPasswordRef = useRef();
   const newPasswordRef = useRef();
@@ -16,25 +14,47 @@ function ProfileForm(props) {
 
     props.onChangePassword({
       oldPassword: enteredOldPassword,
-      newPassword: enteredNewPassword
+      newPassword: enteredNewPassword,
     });
-    oldPasswordRef.current.value=''
-    newPasswordRef.current.value=''
+    oldPasswordRef.current.value = '';
+    newPasswordRef.current.value = '';
   }
 
   return (
-    <form className={classes.form} onSubmit={submitHandler}>
-        <div className={classes.control}>
-        <label htmlFor='old-password'>Old Password</label>
-        <input type='password' id='old-password' ref={oldPasswordRef} />
+    <form className="max-w-lg m-auto my-4" onSubmit={submitHandler}>
+      <div className="mb-2">
+        <label
+          className="font-bold mb-1 text-gray-900 block"
+          htmlFor="old-password"
+        >
+          Current Password:
+        </label>
+        <input
+          className="block min-w-full rounded-sm p-1.5 border-2 border-veryDarkBlue bg-slate-200"
+          type="password"
+          id="old-password"
+          ref={oldPasswordRef}
+        />
       </div>
-      <div className={classes.control}>
-        <label htmlFor='new-password'>New Password</label>
-        <input type='password' id='new-password' ref={newPasswordRef} />
+      <div className="mb-2">
+        <label
+          className="font-bold mb-1 text-gray-900 block"
+          htmlFor="new-password"
+        >
+          New Password:
+        </label>
+        <input
+          className="block min-w-full rounded-sm p-1.5 border-2 border-veryDarkBlue bg-slate-200"
+          type="password"
+          id="new-password"
+          ref={newPasswordRef}
+        />
       </div>
-    
-      <div className={classes.action}>
-        <button>Change Password</button>
+
+      <div className="mt-8">
+        <button className="cursor-pointer px-4 py-4 rounded-lg border-2 border-red-400 bg-red-400 text-white hover:text-red-400 hover:bg-white">
+          Change Password
+        </button>
       </div>
     </form>
   );

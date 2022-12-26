@@ -10,6 +10,7 @@ import { connectToDatabase } from '../../../lib/db';
 // but it is still an api route so it has to return api handler
 
 export default NextAuth({
+  // https://next-auth.js.org/configuration/options
   secret: process.env.AUTH_SECRET,
   session: {
     jwt: true,
@@ -18,6 +19,7 @@ export default NextAuth({
   providers: [
     CredentialsProvider({
       async authorize(credentials) {
+        // https://next-auth.js.org/configuration/providers/credentials
         const client = await connectToDatabase();
         if (!client) {
           throw new Error('Connection to MongoDb failed!');
@@ -45,7 +47,10 @@ export default NextAuth({
         }
 
         client.close();
-        return { email: user.email, message: 'You are logged in!' };
+        // if we return an object inside of NextAuth we let NextAuth
+        // know that authorization succeded, this object will then later be 
+        // encoded into json web token
+        return { email: user.email};
       },
     }),
   ],

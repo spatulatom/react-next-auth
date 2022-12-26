@@ -3,10 +3,7 @@ import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import NotificationContext from '../../store/notification-context';
 
-import classes from './auth-form.module.css';
-
 async function createUser(email, password) {
- 
   const response = await fetch('/api/auth/signup', {
     method: 'POST',
     body: JSON.stringify({ email, password }),
@@ -38,7 +35,6 @@ function AuthForm() {
 
   async function submitHandler(event) {
     event.preventDefault();
-    
 
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
@@ -56,7 +52,7 @@ function AuthForm() {
         email: enteredEmail,
         password: enteredPassword,
       });
-      console.log('result sign in', result)
+      console.log('result sign in', result);
 
       if (!result.error) {
         // set some auth state
@@ -66,9 +62,8 @@ function AuthForm() {
           message: 'Your are logged in!',
           status: 'success',
         });
-        
       }
-      if(result.error){
+      if (result.error) {
         notificationCtx.showNotification({
           title: 'Error!',
           message: result.error || 'Something went wrong!',
@@ -83,15 +78,15 @@ function AuthForm() {
           status: 'pending',
         });
         const result = await createUser(enteredEmail, enteredPassword);
-      
+
         router.replace('/auth');
         notificationCtx.showNotification({
           title: 'Success!',
           message: result.message || 'Your comment was saved!',
           status: 'success',
         });
-        emailInputRef.current.value="";
-        passwordInputRef.current.value="";
+        emailInputRef.current.value = '';
+        passwordInputRef.current.value = '';
       } catch (error) {
         notificationCtx.showNotification({
           title: 'Error!',
@@ -103,30 +98,47 @@ function AuthForm() {
   }
 
   return (
-    <section className={classes.auth}>
-      <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
+    // <section className={classes.auth}>
+    <section className="m-auto my-20 max-w-xl bg-veryDarkBlue py-8 px-2 md:p-6 rounded-lg shadow-lg ">
+      <h1 className="text-white text-center text-lg uppercase mb-8">
+        {isLogin ? 'Login' : 'Create a new account'}
+      </h1>
       <form onSubmit={submitHandler}>
-        <div className={classes.control}>
-          <label htmlFor='email'>Your Email</label>
-          <input type='email' id='email' required ref={emailInputRef} />
-        </div>
-        <div className={classes.control}>
-          <label htmlFor='password'>Your Password</label>
+        <div className="mb-8">
+          <label className="block text-white font-bold mb-2" htmlFor="email">
+            Your Email:
+          </label>
           <input
-            type='password'
-            id='password'
+            className="rounded-sm w-full p-2"
+            type="email"
+            id="email"
             required
-            ref={passwordInputRef}
+            ref={emailInputRef}
           />
         </div>
-        <div className={classes.actions}>
-          <button>{isLogin ? 'Login' : 'Create Account'}</button>
+        <div className="mb-8">
+          <label className="block text-white font-bold mb-2" htmlFor="password">
+            Your Password:
+          </label>
+          <input
+            className="rounded-sm w-full p-2"
+            type="password"
+            id="password"
+            required
+            ref={passwordInputRef}
+            placeholder="min. 7 characters long"
+          />
+        </div>
+        <div className="flex flex-col items-center">
+          <button className="text-white uppercase bg-red-400 rounded-md py-2 mb-4 px-8 hover:bg-white hover:text-red-400 ">
+            {isLogin ? 'Login' : 'Create Account'}
+          </button>
           <button
-            type='button'
-            className={classes.toggle}
+            type="button"
+            className="mt-2 mb-8 text-white pt-1 px-1 hover:text-red-400"
             onClick={switchAuthModeHandler}
           >
-            {isLogin ? 'Create new account' : 'Login with existing account'}
+            {isLogin ? ' Switch to: CREATE ACCOUNT' : 'Switch to: LOGIN'}
           </button>
         </div>
       </form>

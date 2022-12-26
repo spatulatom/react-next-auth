@@ -25,7 +25,7 @@ function MainNavigation() {
   };
 
   return (
-    <nav className="container relative bg-blue-500 mx-auto p-6 min-w-full">
+    <nav className="container relative bg-veryDarkBlue mx-auto p-6 min-w-full">
       {/* Flex Container For Nav Items  */}
       <div className="flex items-center justify-between my-6">
         {/* Logo */}

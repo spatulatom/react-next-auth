@@ -48,6 +48,11 @@ function AuthForm() {
         status: 'pending',
       });
       const result = await signIn('credentials', {
+        // when we throw an error here then by default Next.js will 
+// redirect us to another page, to override that behaviour we need
+// on the clinet side pass redirect:false when in our fetching to the backend
+// so that is for example passed to the SignIn function,
+// we can utilze that and pass our own error page or jus do it like here 
         redirect: false,
         email: enteredEmail,
         password: enteredPassword,

@@ -7,7 +7,8 @@ import { connectToDatabase } from '../../../lib/db';
 // this is catch all api route and it will catch routes like sign in and sign out and
 // a few more, we can check them here:https://next-auth.js.org/getting-started/rest-api
 // Futhermore it is a function NextAuth() that we will execute here
-// but it is still an api route so it has to return api handler
+// but it is still an api route so it has to return api handler-work 
+// like one anyways
 
 export default NextAuth({
   // https://next-auth.js.org/configuration/options
@@ -24,7 +25,10 @@ export default NextAuth({
         if (!client) {
           throw new Error('Connection to MongoDb failed!');
         }
-
+// when we throw an error here then by default Next.js will 
+// redirect us to another page, to override that behaviour we need
+// on the clinet side pass redirect:false when in our fetching to the backend
+// so that is for example passed to the SignIn function in auth-form.js
         const usersCollection = client.db().collection('users');
 
         const user = await usersCollection.findOne({

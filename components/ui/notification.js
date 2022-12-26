@@ -14,7 +14,7 @@ function Notification(props) {
   }
 
   if (status === 'error') {
-    statusClasses = 'bg-red-400';
+    statusClasses = 'bg-red-600';
   }
 
   if (status === 'pending') {

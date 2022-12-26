@@ -37,6 +37,7 @@ function ProfilePage(props) {
       </div>
     );
   }
+  // or props.session 
   if (session) {
     return (
       <Fragment>
@@ -51,7 +52,8 @@ function ProfilePage(props) {
       </Fragment>
     );
   }
-  if (!session) {
+  // this if check is not really needed since we redirectin on the server
+  if (!props.session) {
     window.location.href = '/auth';
   }
 }
@@ -80,15 +82,17 @@ export const getServerSideProps = async (context) => {
 
   if (!session) {
     return {
-      props: { email: 'Error getting your email address from database!' },
+      redirect: { destination: '/auth', permanent: false },
     };
+  //   serverSideProps has to return at least empty objecy
+  //   return{props:{}}
   }
 
   const userEmail = session.user.email;
   console.log('USER EMAIL', userEmail);
 
   return {
-    props: { email: userEmail },
+    props: { email: userEmail, session },
   };
 };
 

@@ -4,6 +4,11 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import { verifyPassword } from '../../../lib/auth';
 import { connectToDatabase } from '../../../lib/db';
 
+// this is catch all api route and it will catch routes like sign in and sign out and
+// a few more, we can check them here:https://next-auth.js.org/getting-started/rest-api
+// Futhermore it is a function NextAuth() that we will execute here
+// but it is still an api route so it has to return api handler
+
 export default NextAuth({
   secret: process.env.AUTH_SECRET,
   session: {

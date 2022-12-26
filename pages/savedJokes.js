@@ -74,6 +74,7 @@ export default function savedJokes(props) {
     try {
       if (response.ok) {
         setJokes(data);
+        setError('')
         setIsLoading(false);
       } else {
         throw new Error(data.message || 'Something went wrong!');

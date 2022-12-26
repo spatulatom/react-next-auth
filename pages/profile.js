@@ -8,30 +8,52 @@ import { Fragment, useEffect } from 'react';
 
 function ProfilePage(props) {
   const router = useRouter();
-  const {data:session} = useSession();
+  const { data: session, status } = useSession();
 
-  useEffect(() => {
-    getSession().then((session) => {
-      if (session) {
-        router.replace('/profile');
-      } else {
-        router.replace('/');
-      }
-    });
-  }, []);
+  // alternative way of protecting routes with useRouter which
+  // has to be in useEffect since it must be executed on client side
+  // const [loding, setLoading] = useState(false);
+  // useEffect(() => {
+  //   getSession().then((session) => {
+  // setLoading(true)
+  //     if (session) {
+  // setLoading(false);
+  //       router.replace('/profile');
+  //     } else {
+  // setLoading(false)
+  //       router.replace('/');
+  //     }
+  //   });
+  // }, []);
 
-  return (
-    <Fragment>
-      <Head>
-        <title>User Profile</title>
-        <meta
-          name="description"
-          content="See your details/change your password!"
-        />
-      </Head>
-      <UserProfile email={props.email} />
-    </Fragment>
-  );
+  // if(loading){
+  //   return <p>Loading</p>
+  // }
+
+  if (status === 'loading') {
+    return (
+      <div className="text-center pt-12 ">
+        <i class="fa-solid fa-spinner fa-2xl fa-spin"></i>
+      </div>
+    );
+  }
+  if (session) {
+    return (
+      <Fragment>
+        <Head>
+          <title>User Profile</title>
+          <meta
+            name="description"
+            content="See your details/change your password!"
+          />
+        </Head>
+        <UserProfile email={props.email} />
+      </Fragment>
+    );
+  }
+  if (!session) {
+    window.location.href = '/auth';
+  }
 }
 
 // export async function getServerSideProps(context) {

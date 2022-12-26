@@ -71,6 +71,10 @@ function AuthForm() {
           status: 'success',
         });
       }
+      // we could I think grab that session token here and perhaps use Context
+      // to manage it globally but wih the page reload all that data would be 
+      // lost, but we store that token in more permanent storage than just
+      // our memory
       if (result.error) {
         notificationCtx.showNotification({
           title: 'Error!',

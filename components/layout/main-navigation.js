@@ -43,7 +43,7 @@ function MainNavigation() {
               </span>
             </Link>
           )}
-          {status === 'authenticated' && (
+          {session && (
             <Link href="/savedJokes">
               <span className="tracking-widest hover:text-softRed cursor-pointer">
                 Saved Jokes

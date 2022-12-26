@@ -54,6 +54,9 @@ function AuthForm() {
 // so that is for example passed to the SignIn function,
 // we can utilze that and pass our own error page or jus do it like here 
         redirect: false,
+        // if redirect is turned to false SignIn() will always return
+        // a promise which is either with return object with  error or a 
+        // success which is still an object but without the error information
         email: enteredEmail,
         password: enteredPassword,
       });

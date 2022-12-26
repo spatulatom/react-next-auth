@@ -62,7 +62,7 @@ h6 {
   height: 3px;
   top: 0;
   left: 0;
-  background: #000;
+  background: rgb(248 113 113);
   transform: rotate(0);
   transition: all 0.5s;
 }
@@ -73,7 +73,7 @@ h6 {
 
 .hamburger-bottom {
   transform: translateY(14px);
-  background: #000;
+  background: rgb(248 113 113);
 }
 
 .open {

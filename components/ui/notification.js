@@ -11,15 +11,14 @@ function Notification(props) {
   let statusClasses = '';
 
   if (status === 'success') {
-    statusClasses = classes.success;
-  }
+    statusClasses = "bg-veryDarkBlue"}
 
   if (status === 'error') {
-    statusClasses = classes.error;
+    statusClasses = "bg-red-400"
   }
 
   if (status === 'pending') {
-    statusClasses = classes.pending;
+    statusClasses = "bg-blue-500";
   }
 
   const activeClasses = `${classes.notification} ${statusClasses}`;

@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 
-import classes from './notification.module.css';
 import NotificationContext from '../../store/notification-context';
 
 function Notification(props) {
@@ -22,11 +21,9 @@ function Notification(props) {
     statusClasses = 'bg-blue-500';
   }
 
-  const activeClasses = `flex flex-col fixed left-0 bottom-0 min-w-full justify-between items-center text-white p-4 min-h-max md:flex-row ${statusClasses}`;
-
   return (
     <div
-      className= {activeClasses}
+      className={`flex flex-col fixed left-0 bottom-0 min-w-full justify-between items-center text-white p-4 px-8 md:px-4 min-h-max md:flex-row ${statusClasses}`}
       onClick={notificationCtx.hideNotification}
     >
       <h2>{title}</h2>

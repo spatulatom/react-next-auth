@@ -53,7 +53,6 @@ export default function savedJokes(props) {
   const [jokes, setJokes] = useState(props.message || []);
   const [error, setError] = useState(props.err || '');
   const [loading, setIsLoading] = useState(false);
-
   useEffect(() => {
     if (status !== 'authenticated') {
       router.replace('/');
@@ -84,7 +83,7 @@ export default function savedJokes(props) {
       setIsLoading(false);
     }
   }
-  if (loading) {
+  if (loading&&!props.message) {
     return (
       <div className="container mx-auto">
       <h2 className="mb-6 mt-8 text-3xl font-semibold text-center md:text-4xl">

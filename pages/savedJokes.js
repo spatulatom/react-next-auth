@@ -43,7 +43,7 @@ export const getServerSideProps = async (context) => {
   const data = await user.jokes;
 
   return {
-    props: { message: data },
+    props: { message: data},
   };
 };
 

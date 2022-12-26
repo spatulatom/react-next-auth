@@ -1,5 +1,4 @@
 import ProfileForm from './profile-form';
-import classes from './user-profile.module.css';
 import { getSession } from 'next-auth/react';
 import { useContext } from 'react';
 import NotificationContext from '../../store/notification-context';
@@ -60,7 +59,9 @@ function UserProfile(props) {
 
   return (
     <section className="m-auto text-center my-12 mx-1">
-      <h1 className=" text-3xl md:text-5xl uppercase mb-4">Your User Profile</h1>
+      <h1 className=" text-3xl md:text-5xl uppercase mb-4">
+        Your User Profile
+      </h1>
       <h2 className="text-xl">Your email: {props.email}</h2>
       <ProfileForm onChangePassword={changePasswordHandler} />
     </section>

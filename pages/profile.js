@@ -84,7 +84,7 @@ export const getServerSideProps = async (context) => {
 
   if (!session) {
     return {
-      redirect: { destination: '/auth', permanent: false },
+      redirect: { destination: '/', permanent: false },
     };
   //   serverSideProps has to return at least empty objecy
   //   return{props:{}}

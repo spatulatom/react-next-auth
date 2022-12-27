@@ -138,7 +138,7 @@ function AuthForm() {
             id="password"
             required
             ref={passwordInputRef}
-            placeholder="min. 7 characters long"
+            placeholder="min. 2 characters long"
           />
         </div>
         <div className="flex flex-col items-center">

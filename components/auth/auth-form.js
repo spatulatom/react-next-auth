@@ -48,14 +48,14 @@ function AuthForm() {
         status: 'pending',
       });
       const result = await signIn('credentials', {
-        // when we throw an error here then by default Next.js will 
-// redirect us to another page, to override that behaviour we need
-// on the clinet side pass redirect:false when in our fetching to the backend
-// so that is for example passed to the SignIn function,
-// we can utilze that and pass our own error page or jus do it like here 
+        // when we throw an error here then by default Next.js will
+        // redirect us to another page, to override that behaviour we need
+        // on the clinet side pass redirect:false when in our fetching to the backend
+        // so that is for example passed to the SignIn function,
+        // we can utilze that and pass our own error page or jus do it like here
         redirect: false,
         // if redirect is turned to false SignIn() will always return
-        // a promise which is either with return object with  error or a 
+        // a promise which is either with return object with  error or a
         // success which is still an object but without the error information
         email: enteredEmail,
         password: enteredPassword,
@@ -72,7 +72,7 @@ function AuthForm() {
         });
       }
       // we could I think grab that session token here and perhaps use Context
-      // to manage it globally but wih the page reload all that data would be 
+      // to manage it globally but wih the page reload all that data would be
       // lost, but we store that token in more permanent storage than just
       // our memory
       if (result.error) {
@@ -110,8 +110,7 @@ function AuthForm() {
   }
 
   return (
-    // <section className={classes.auth}>
-    <section className="m-auto my-20 max-w-xl bg-veryDarkBlue py-8 px-2 md:p-6 rounded-lg shadow-lg ">
+    <section className="m-auto my-12 max-w-xl bg-veryDarkBlue py-4 px-2 md:p-6 rounded-lg shadow-lg ">
       <h1 className="text-white text-center text-lg uppercase mb-8">
         {isLogin ? 'Login' : 'Create a new account'}
       </h1>

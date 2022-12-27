@@ -46,7 +46,7 @@ export default function kkks(props) {
         <section id="features">
           <div className="container mx-auto mt-16 px-6">
             <h2 className="mb-6 text-4xl font-semibold text-center">
-              A Joke Manager
+              Joke's Manager
             </h2>
             <p className="max-w-md mx-auto text-center text-grayishBlue">
               Laughter can increase your oxygen intake, which can in turn

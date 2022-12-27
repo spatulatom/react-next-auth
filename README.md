@@ -1,10 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+
+## Getting Started [![LinkedIn][linkedin-shield]][linkedin-url]
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 <a name="readme-top"></a>
 
-[![LinkedIn][linkedin-shield]][linkedin-url]
+
 
 
 
@@ -14,9 +16,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 
   <p>
-    'projects' is a portfolio website - this repository contains its source code
+    'joke's manager' is a fullstack Next.js app - this repository contains its source code
        <br />
-    <a href="https://spatulatom.github.io/projects-online/"><strong>View the deployed website »</strong></a>
+    <a href="https://react-next-auth-ashy.vercel.app/"><strong>View the deployed app on Vercel »</strong></a>
     <br />
     <br />
    
@@ -40,10 +42,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-* This website contains my several ongoing and completed projects:
+* Generate a joke a save it on your account. User login/create account interface. A fullstack Next.js app with Tailwind for styling. Static Site Generation (SSG), Incremental Static Regeneration (ISG) for better Search Engine Optimazation (SEO) and speed. Also Server Side Rendering (SSR) in use. NextAuth for Authentication and route protection on the client and the server side. MongoDB for data storage. React Context for app wide state management. Notification for better UX when fetching data from backend APIs or external APIs.
 
 
-![Product Name Screen Shot](imgs/projects.png)
+![Product Name Screen Shot](imgs/jokes1.png)
+![Product Name Screen Shot](imgs/jokes2.png)
+![Product Name Screen Shot](imgs/jokes3.png)
+![Product Name Screen Shot](imgs/jokes4.png)
+![Product Name Screen Shot](imgs/jokes5.png)
+![Product Name Screen Shot](imgs/jokes6.png)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

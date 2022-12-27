@@ -59,7 +59,7 @@ function UserProfile(props) {
 
   return (
     <section className="m-auto text-center my-12 mx-1">
-      <h1 className=" text-3xl md:text-5xl uppercase mb-4">
+      <h1 className="text-3xl md:text-5xl uppercase mb-4">
         Your User Profile
       </h1>
       <h2 className="text-xl">Your email: {props.email}</h2>

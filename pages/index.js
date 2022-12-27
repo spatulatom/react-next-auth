@@ -5,7 +5,6 @@ import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { Fragment } from 'react';
-import { data } from 'autoprefixer';
 
 export const getStaticProps = async () => {
   const config = {
@@ -14,7 +13,7 @@ export const getStaticProps = async () => {
     },
   };
   try {
-    const res = await fetch('https://icanhazdadjoke.comStaticProps', config);
+    const res = await fetch('https://icanhazdadjoke.com', config);
     if (res.ok) {
       const data = await res.json();
 

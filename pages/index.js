@@ -1,7 +1,5 @@
 import React from 'react';
 import Jokes from '../components/ui/jokes';
-import { useSession, signOut } from 'next-auth/react';
-import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { Fragment } from 'react';
 
@@ -18,6 +16,7 @@ export const getStaticProps = async () => {
 
       return {
         props: { joke: data.joke },
+        revalidate: 60,
       };
     }
   } catch (error) {
@@ -30,7 +29,7 @@ export const getStaticProps = async () => {
 };
 
 export default function kkks(props) {
-  const router = useRouter();
+
 
   return (
     <Fragment>

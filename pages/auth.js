@@ -6,7 +6,7 @@ import Head from 'next/head';
 import AuthForm from '../components/auth/auth-form';
 
 function AuthPage(props) {
-  const router = useRouter();
+
 //  another way for redirecting is to use useEffect + loading state
 // and render for ex spinner while loading - so we dont see the page for 
 // that biref moment while figuring out whether we ha a session

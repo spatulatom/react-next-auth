@@ -14,7 +14,7 @@ export const getStaticProps = async () => {
     },
   };
   try {
-    const res = await fetch('https://icanhazdadjoke.com', config);
+    const res = await fetch('https://icanhazdadjoke.comStaticProps', config);
     if (res.ok) {
       const data = await res.json();
 
@@ -67,7 +67,7 @@ export default function kkks(props) {
         </section>
 
         {/* Features Tabs */}
-        <Jokes joke={props.joke} err={props.err}/>
+        <Jokes joke={props.joke} err={props.err} />
 
         {/* Hero Section */}
         <section id="hero">

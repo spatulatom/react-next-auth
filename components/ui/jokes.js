@@ -3,7 +3,6 @@ import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import NotificationContext from '../../store/notification-context';
 
-
 export default function Jokes(props) {
   const [tab1Active, setTab1] = useState(true);
   const [tab2Active, setTab2] = useState(false);
@@ -13,8 +12,8 @@ export default function Jokes(props) {
   const [panel3Active, setPanel3Active] = useState(false);
   const [joke, setJoke] = useState(props.joke || '');
   const [loading, setIsLoading] = useState(false);
-  const [error, setError] = useState(props.err ||null);
-  console.log('JOKES,JS', props.joke, props.err)
+  const [error, setError] = useState(props.err || null);
+  console.log('JOKES,JS', props.joke, props.err);
 
   const notificationCtx = useContext(NotificationContext);
 
@@ -78,9 +77,7 @@ export default function Jokes(props) {
       });
   };
 
-  useEffect(() => {
-    
-  }, []);
+  useEffect(() => {}, []);
 
   const showPanel1 = (e) => {
     setTab1(true);

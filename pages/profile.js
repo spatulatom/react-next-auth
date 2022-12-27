@@ -54,7 +54,9 @@ function ProfilePage(props) {
   }
   // this if check is not really needed since we redirectin on the server
   if (!props.session) {
-    window.location.href = '/auth';
+    // the code below reloads the whole app
+    // window.location.href = '/auth';
+    return;
   }
 }
 

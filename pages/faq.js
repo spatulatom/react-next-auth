@@ -5,19 +5,23 @@ import { useRouter } from 'next/router';
 import { getSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 
+export const getServerSideProps = async (context) => {
+  const { req, res } = context;
+  const session = await getSession({ req: req });
+
+  if (!session) {
+    return {
+      redirect: { destination: '/', permanent: false },
+    };
+  }
+
+  return {
+    props: { session },
+  };
+};
+
 export default function Faq() {
   const [isLoading, setIsLoading] = useState(true);
-  const router = useRouter();
-
-  useEffect(() => {
-    getSession().then((session) => {
-      if (session) {
-        router.replace('/faq');
-      } else {
-        router.replace('/');
-      }
-    });
-  }, []);
 
   return (
     <Fragment>

@@ -11,7 +11,7 @@ export const getServerSideProps = async (context) => {
 
   if (!session) {
     return {
-      props: { jokes: 'no session' },
+      redirect: { destination: '/', permanent: false },
     };
   }
 
@@ -43,7 +43,7 @@ export const getServerSideProps = async (context) => {
   const data = await user.jokes;
 
   return {
-    props: { message: data},
+    props: { message: data },
   };
 };
 
@@ -74,7 +74,7 @@ export default function savedJokes(props) {
     try {
       if (response.ok) {
         setJokes(data);
-        setError('')
+        setError('');
         setIsLoading(false);
       } else {
         throw new Error(data.message || 'Something went wrong!');
@@ -84,20 +84,20 @@ export default function savedJokes(props) {
       setIsLoading(false);
     }
   }
-  if (loading&&!props.message) {
+  if (loading && !props.message) {
     return (
       <div className="container mx-auto">
-      <h2 className="mb-6 mt-8 text-3xl font-semibold text-center md:text-4xl">
-        Your bookmarked jokes
-      </h2>
-      <p className="max-w-lg px-6 mx-auto text-center text-gray-500">
-        Here are your saved jokes so you can always have a quick look at
-        those that made you laugh!
-      </p>
-    
-      <div className="text-center pt-12 ">
-        <i class="fa-solid fa-spinner fa-2xl fa-spin"></i>
-      </div>
+        <h2 className="mb-6 mt-8 text-3xl font-semibold text-center md:text-4xl">
+          Your bookmarked jokes
+        </h2>
+        <p className="max-w-lg px-6 mx-auto text-center text-gray-500">
+          Here are your saved jokes so you can always have a quick look at those
+          that made you laugh!
+        </p>
+
+        <div className="text-center pt-12 ">
+          <i class="fa-solid fa-spinner fa-2xl fa-spin"></i>
+        </div>
       </div>
     );
   } else {
@@ -112,17 +112,17 @@ export default function savedJokes(props) {
     } else if (jokes.length === 0 && error.length !== 0) {
       return (
         <div className="container mx-auto">
-              <h2 className="mb-6 mt-8 text-3xl font-semibold text-center md:text-4xl">
-                Your bookmarked jokes
-              </h2>
-              <p className="max-w-lg px-6 mx-auto text-center text-gray-500">
-                Here are your saved jokes so you can always have a quick look at
-                those that made you laugh!
-              </p>
-            
-        <p className="max-w-lg px-6 py-8 mx-auto mt-8 text-center bg-red-300 text-gray-500">
-          {error}
-        </p>
+          <h2 className="mb-6 mt-8 text-3xl font-semibold text-center md:text-4xl">
+            Your bookmarked jokes
+          </h2>
+          <p className="max-w-lg px-6 mx-auto text-center text-gray-500">
+            Here are your saved jokes so you can always have a quick look at
+            those that made you laugh!
+          </p>
+
+          <p className="max-w-lg px-6 py-8 mx-auto mt-8 text-center bg-red-300 text-gray-500">
+            {error}
+          </p>
         </div>
       );
     } else {

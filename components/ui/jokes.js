@@ -4,8 +4,6 @@ import axios from 'axios';
 import NotificationContext from '../../store/notification-context';
 import { ImSpinner2 } from 'react-icons';
 
-
-
 export default function Jokes(props) {
   const [tab1Active, setTab1] = useState(true);
   const [tab2Active, setTab2] = useState(false);
@@ -17,13 +15,13 @@ export default function Jokes(props) {
   const [loading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-
   const notificationCtx = useContext(NotificationContext);
 
   async function saveJoke() {
     notificationCtx.showNotification({
       title: 'Seving joke...',
-      message: 'Your chosen joked is currently being stored into on your account.',
+      message:
+        'Your chosen joked is currently being stored into on your account.',
       status: 'pending',
     });
 
@@ -188,7 +186,7 @@ export default function Jokes(props) {
               />
             </div>
             {/* Panel Content */}
-            <div className="flex flex-col justify-around space-y-8 md:w-1/2">
+            <div className="flex flex-col justify-between space-y-8 md:w-1/2">
               <h3 className="mt-4 max-w-md text-3xl font-semibold text-center md:mt-0 md:text-left">
                 {loading ? (
                   <div className="text-center">
@@ -209,7 +207,7 @@ export default function Jokes(props) {
                 <div className="mx-auto md:mx-0">
                   <a
                     onClick={saveJoke}
-                    className="px-6 cursor-pointer py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
+                    className="px-24 font-normal text-lg cursor-pointer py-2 mt-4 text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
                   >
                     Save
                   </a>
@@ -218,7 +216,7 @@ export default function Jokes(props) {
                 <div className="mx-auto md:mx-0">
                   <button
                     disabled
-                    className="px-6 cursor-pointer py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue cursor-not-allowed"
+                    className="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue cursor-not-allowed"
                   >
                     Save
                   </button>
@@ -261,7 +259,7 @@ export default function Jokes(props) {
                 <div className="mx-auto md:mx-0">
                   <a
                     onClick={saveJoke}
-                    className="px-6 cursor-pointer py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
+                    className="px-24 font-normal text-lg cursor-pointer py-2 mt-4 text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
                   >
                     Save
                   </a>
@@ -270,7 +268,7 @@ export default function Jokes(props) {
                 <div className="mx-auto md:mx-0">
                   <button
                     disabled
-                    className="px-6 cursor-pointer py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue cursor-not-allowed"
+                    className="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue cursor-not-allowed"
                   >
                     Save
                   </button>
@@ -313,7 +311,7 @@ export default function Jokes(props) {
                 <div className="mx-auto md:mx-0">
                   <a
                     onClick={saveJoke}
-                    className="px-6 cursor-pointer py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
+                    className="px-24 font-normal text-lg cursor-pointer py-2 mt-4 text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
                   >
                     Save
                   </a>

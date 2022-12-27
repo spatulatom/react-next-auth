@@ -13,7 +13,6 @@ export default function Jokes(props) {
   const [joke, setJoke] = useState(props.joke || '');
   const [loading, setIsLoading] = useState(false);
   const [error, setError] = useState(props.err || null);
-  console.log('JOKES,JS', props.joke, props.err);
 
   const notificationCtx = useContext(NotificationContext);
 

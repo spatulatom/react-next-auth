@@ -16,7 +16,7 @@ export const getStaticProps = async () => {
 
       return {
         props: { joke: data.joke },
-        revalidate: 60,
+        revalidate: 1440,
       };
     }
   } catch (error) {

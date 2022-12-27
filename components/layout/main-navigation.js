@@ -120,7 +120,7 @@ function MainNavigation() {
               className="block hover:text-softRed"
               onClick={handleMobileMenu}
             >
-              Saved
+              Saved Jokes
             </Link>
           </div>
         )}

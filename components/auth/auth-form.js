@@ -67,7 +67,7 @@ function AuthForm() {
         router.replace('/');
         notificationCtx.showNotification({
           title: 'Success!',
-          message: 'Your are logged in!',
+          message: 'Welcome! You are logged in!',
           status: 'success',
         });
       }
@@ -94,7 +94,7 @@ function AuthForm() {
         router.replace('/auth');
         notificationCtx.showNotification({
           title: 'Success!',
-          message: result.message || 'Your comment was saved!',
+          message: result.message || 'Your account was created!',
           status: 'success',
         });
         emailInputRef.current.value = '';
@@ -112,7 +112,7 @@ function AuthForm() {
   return (
     <section className="m-auto my-12 max-w-md bg-veryDarkBlue py-4 px-2 rounded-lg shadow-2xl ">
       <h1 className="text-white text-center text-2xl uppercase m-4">
-        {isLogin ? 'Login' : 'Create a new account'}
+        {isLogin ? 'Login:' : 'Create a new account:'}
       </h1>
       <form onSubmit={submitHandler}>
         <div className="mb-8">
@@ -149,7 +149,7 @@ function AuthForm() {
             className="mt-2 mb-8 text-white pt-1 px-2 hover:text-red-400 shadow-lg"
             onClick={switchAuthModeHandler}
           >
-            {isLogin ? ' Switch to: CREATE ACCOUNT' : 'Switch to: LOGIN'}
+            {isLogin ? ' New user? Then click here: CREATE ACCOUNT' : 'Have an account? Click here: LOGIN'}
           </button>
         </div>
       </form>

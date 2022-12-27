@@ -21,24 +21,24 @@ export default function kkks() {
       </Head>
       <div className="overflow-x-hidden">
         {/* Features Heading */}
-        {status === 'authenticated' ? (
-          <section id="features">
-            <div className="container mx-auto mt-16 px-6">
-              <h2 className="mb-6 text-4xl font-semibold text-center">
-                Laughter 
-              </h2>
-              <p className="max-w-md mx-auto text-center text-grayishBlue">
-                Laughter can increase your oxygen intake, which can in turn
-                stimulate your heart, lungs, and muscles. Laughing further
-                releases endorphins, the feel-good chemicals our bodies produce
-                to make us feel happy and even relieve pain or stress.
-              </p>
-            </div>
-          </section>
-        ) : null}
+
+        <section id="features">
+          <div className="container mx-auto mt-16 px-6">
+            <h2 className="mb-6 text-4xl font-semibold text-center">
+              A Joke Manager
+            </h2>
+            <p className="max-w-md mx-auto text-center text-grayishBlue">
+              Laughter can increase your oxygen intake, which can in turn
+              stimulate your heart, lungs, and muscles. Laughing further
+              releases endorphins, the feel-good chemicals our bodies produce to
+              make us feel happy and even relieve pain or stress. 
+              <span className="font-bold"> Use this app to get you laughter back on track unless you're already there, then use it anyway :).</span>
+            </p>
+          </div>
+        </section>
 
         {/* Features Tabs */}
-        {status === 'authenticated' ? <Jokes /> : null}
+        <Jokes />
 
         {/* Hero Section */}
         <section id="hero">
@@ -47,12 +47,12 @@ export default function kkks() {
             {/* Content */}
             <div className="flex flex-col space-y-10 lg:mt-16 lg:w-1/2">
               <h1 className="text-3xl font-semibold text-center lg:text-6xl lg:text-left">
-                A Joke Bookmark Manager
+                A Joke Manager
               </h1>
               <p className="max-w-md mx-auto text-lg text-center text-gray-400 lg:text-2xl lg:text-left lg:mt-0 lg:mx-0">
-                A clean and simple interface to organize your favourite
-                jokes. 
-                Save favourite jokes on your account and come back any time to lift up your mood!
+                A clean and simple interface to organize your favourite jokes.
+                Save favourite jokes on your account and come back any time to
+                lift up your mood!
               </p>
 
               {/* Buttons Container */}
@@ -84,8 +84,6 @@ export default function kkks() {
           </div>
         </section>
 
-      
-
         {/* FAQ Heading */}
 
         {/* Newsletter Section */}
@@ -95,10 +93,7 @@ export default function kkks() {
             <p className="mb-6 text-lg tracking-widest text-center text-white uppercase">
               35,000+ Already Joined
             </p>
-            <h2 className="px-3 mb-6 text-3xl font-semibold text-center text-white md:text-4xl">
-            
-
-            </h2>
+            <h2 className="px-3 mb-6 text-3xl font-semibold text-center text-white md:text-4xl"></h2>
 
             {/* Form */}
             <form className="flex flex-col items-start justify-center max-w-2xl mx-auto space-y-6 text-base px-6 md:flex-row md:space-y-0 md:space-x-4 md:px-0">

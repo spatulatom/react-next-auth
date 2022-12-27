@@ -23,7 +23,7 @@ export default function Jokes(props) {
   async function saveJoke() {
     notificationCtx.showNotification({
       title: 'Seving joke...',
-      message: 'Your chosen joked is currently being stored into a database.',
+      message: 'Your chosen joked is currently being stored into on your account.',
       status: 'pending',
     });
 

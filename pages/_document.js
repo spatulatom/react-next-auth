@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html>
+    <Html className="min-h-screen">
       <Head>
       <link
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap"
@@ -17,7 +17,7 @@ export default function Document() {
     />
       </Head>
       <body className="font-sans">
-        <Main />
+        <Main/>
         <NextScript />
       </body>
     </Html>

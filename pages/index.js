@@ -89,7 +89,7 @@ export default function kkks() {
         {/* FAQ Heading */}
 
         {/* Newsletter Section */}
-        <section id="newsletter" className="bg-blue-600">
+        <section id="newsletter" className="bg-blue-600 mt-12">
           {/* Main Container */}
           <div className="max-w-lg mx-auto py-24">
             <p className="mb-6 text-lg tracking-widest text-center text-white uppercase">

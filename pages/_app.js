@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps}/>
       </Layout>
       </NotificationContextProvider>
-    // </SessionProvider>
+    </SessionProvider>
    
   );
 }

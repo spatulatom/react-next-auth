@@ -11,7 +11,7 @@ function Layout(props) {
   return (
     <Fragment>
       <MainNavigation />
-      <main className="scroll-smooth min-h-80vh">{props.children}</main>
+      <main className="scroll-smooth">{props.children}</main>
       {activeNotification && (
         <Notification
           title={activeNotification.title}

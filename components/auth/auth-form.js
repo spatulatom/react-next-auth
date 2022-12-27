@@ -110,8 +110,8 @@ function AuthForm() {
   }
 
   return (
-    <section className="m-auto my-12 max-w-md bg-blue-900 py-4 px-2 md:p-6 rounded-lg shadow-lg ">
-      <h1 className="text-white text-center text-lg uppercase mb-8">
+    <section className="m-auto my-12 max-w-md bg-veryDarkBlue py-4 px-2 rounded-lg shadow-2xl ">
+      <h1 className="text-white text-center text-2xl uppercase m-4">
         {isLogin ? 'Login' : 'Create a new account'}
       </h1>
       <form onSubmit={submitHandler}>
@@ -120,7 +120,7 @@ function AuthForm() {
             Your Email:
           </label>
           <input
-            className="rounded-sm w-full p-2"
+            className="w-full p-3"
             type="email"
             id="email"
             required
@@ -132,7 +132,7 @@ function AuthForm() {
             Your Password:
           </label>
           <input
-            className="rounded-sm w-full p-2"
+            className="w-full p-3"
             type="password"
             id="password"
             required
@@ -141,12 +141,12 @@ function AuthForm() {
           />
         </div>
         <div className="flex flex-col items-center">
-          <button className="text-white uppercase bg-red-400 rounded-md py-2 mb-4 px-8 hover:bg-white hover:text-red-400 ">
+          <button className="text-white uppercase bg-red-400 rounded-md py-2 mb-4 px-12 hover:bg-white hover:text-red-400 shadow-lg ">
             {isLogin ? 'Login' : 'Create Account'}
           </button>
           <button
             type="button"
-            className="mt-2 mb-8 text-white pt-1 px-1 hover:text-red-400"
+            className="mt-2 mb-8 text-white pt-1 px-2 hover:text-red-400 shadow-lg"
             onClick={switchAuthModeHandler}
           >
             {isLogin ? ' Switch to: CREATE ACCOUNT' : 'Switch to: LOGIN'}

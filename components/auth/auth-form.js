@@ -110,7 +110,7 @@ function AuthForm() {
   }
 
   return (
-    <section className="m-auto my-12 max-w-xl bg-veryDarkBlue py-4 px-2 md:p-6 rounded-lg shadow-lg ">
+    <section className="m-auto my-12 max-w-md bg-blue-900 py-4 px-2 md:p-6 rounded-lg shadow-lg ">
       <h1 className="text-white text-center text-lg uppercase mb-8">
         {isLogin ? 'Login' : 'Create a new account'}
       </h1>

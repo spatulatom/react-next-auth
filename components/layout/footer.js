@@ -5,7 +5,7 @@ import { useSession } from 'next-auth/react';
 export default function Footer() {
   const { data: session, status } = useSession();
   return (
-    <footer className="py-16 bg-veryDarkBlue">
+    <footer className="py-8 bg-veryDarkBlue">
       {/* Footer Flex Container */}
       <div className="container flex flex-col items-center justify-between mx-auto space-y-16 px-6 md:flex-row md:space-y-0">
         {/* Logo/Menu Container */}

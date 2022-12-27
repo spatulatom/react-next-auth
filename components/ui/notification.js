@@ -23,7 +23,7 @@ function Notification(props) {
 
   return (
     <div
-      className={`flex flex-col fixed container bg- left-0 bottom-0 min-w-full justify-between items-center text-white p-4 px-8 md:px-4 min-h-max md:flex-row ${statusClasses}`}
+      className={`flex flex-col fixed md:w-1/2 md:left-1/4  bottom-0 justify-between items-center text-white p-4 px-8 md:px-4 min-h-max md:flex-row ${statusClasses}`}
       onClick={notificationCtx.hideNotification}
     >
       <h2>{title}</h2>

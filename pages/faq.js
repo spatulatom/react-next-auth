@@ -1,9 +1,7 @@
 import React from 'react';
 import { Fragment } from 'react';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import { getSession } from 'next-auth/react';
-import { useEffect, useState } from 'react';
 
 export const getServerSideProps = async (context) => {
   const { req, res } = context;
@@ -21,7 +19,6 @@ export const getServerSideProps = async (context) => {
 };
 
 export default function Faq() {
-  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <Fragment>

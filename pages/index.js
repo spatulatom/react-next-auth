@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import Jokes from '../components/ui/jokes';
 import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
@@ -31,7 +30,6 @@ export const getStaticProps = async () => {
 };
 
 export default function kkks(props) {
-  const { data: session, status } = useSession();
   const router = useRouter();
 
   return (

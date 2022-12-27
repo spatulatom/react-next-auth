@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import { getSession } from 'next-auth/react';
-import { useEffect, useState } from 'react';
 import { Fragment } from 'react';
 import Head from 'next/head';
 

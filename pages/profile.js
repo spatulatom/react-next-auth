@@ -37,7 +37,7 @@ function ProfilePage(props) {
       </div>
     );
   }
-  // or props.session 
+  // or props.session
   if (session) {
     return (
       <Fragment>
@@ -86,8 +86,8 @@ export const getServerSideProps = async (context) => {
     return {
       redirect: { destination: '/', permanent: false },
     };
-  //   serverSideProps has to return at least empty objecy
-  //   return{props:{}}
+    //   serverSideProps has to return at least empty objecy
+    //   return{props:{}}
   }
 
   const userEmail = session.user.email;

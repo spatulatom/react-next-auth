@@ -11,9 +11,10 @@ export default function Jokes(props) {
   const [panel1Active, setPanel1Active] = useState(true);
   const [panel2Active, setPanel2Active] = useState(false);
   const [panel3Active, setPanel3Active] = useState(false);
-  const [joke, setJoke] = useState('');
+  const [joke, setJoke] = useState(props.joke || '');
   const [loading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(props.err ||null);
+  console.log('JOKES,JS', props.joke, props.err)
 
   const notificationCtx = useContext(NotificationContext);
 
@@ -68,6 +69,7 @@ export default function Jokes(props) {
       .then((res) => {
         setJoke(res.data.joke);
         setIsLoading(false);
+        setError(null);
       })
       .catch((error) => {
         console.log('ERROR', error);
@@ -77,7 +79,7 @@ export default function Jokes(props) {
   };
 
   useEffect(() => {
-    getJoke();
+    
   }, []);
 
   const showPanel1 = (e) => {
@@ -199,7 +201,7 @@ export default function Jokes(props) {
 
               {error ? (
                 <p className="max-w-md text-center py-4 text-white bg-red-400">
-                  error
+                  {error}
                 </p>
               ) : null}
 

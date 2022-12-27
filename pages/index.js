@@ -5,8 +5,33 @@ import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { Fragment } from 'react';
+import { data } from 'autoprefixer';
 
-export default function kkks() {
+export const getStaticProps = async () => {
+  const config = {
+    headers: {
+      Accept: 'application/json',
+    },
+  };
+  try {
+    const res = await fetch('https://icanhazdadjoke.com', config);
+    if (res.ok) {
+      const data = await res.json();
+
+      return {
+        props: { joke: data.joke },
+      };
+    }
+  } catch (error) {
+    return {
+      props: {
+        err: 'Iternal server error. Try to load a different joke please!',
+      },
+    };
+  }
+};
+
+export default function kkks(props) {
   const { data: session, status } = useSession();
   const router = useRouter();
 
@@ -31,14 +56,18 @@ export default function kkks() {
               Laughter can increase your oxygen intake, which can in turn
               stimulate your heart, lungs, and muscles. Laughing further
               releases endorphins, the feel-good chemicals our bodies produce to
-              make us feel happy and even relieve pain or stress. 
-              <span className="font-bold"> Use this app to get you laughter back on track unless you're already there, then use it anyway :).</span>
+              make us feel happy and even relieve pain or stress.
+              <span className="font-bold">
+                {' '}
+                Use this app to get your laughter back on track unless you're
+                already there, then use it anyway :).
+              </span>
             </p>
           </div>
         </section>
 
         {/* Features Tabs */}
-        <Jokes />
+        <Jokes joke={props.joke} err={props.err}/>
 
         {/* Hero Section */}
         <section id="hero">

@@ -107,7 +107,8 @@ Upon clicking on 'Save' button a joke get saved in MongoDB on the user profile.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* https://alvarotrigo.com/fullPage/ for vertical and horizontal scrolling effect.
+* Udemy courses on Tailwind: https://www.udemy.com/course/tailwind-from-scratch/
+and Next.js: https://www.udemy.com/course/nextjs-react-the-complete-guide/
 
 
 

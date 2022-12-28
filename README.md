@@ -51,7 +51,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 
 
-* Jokes can be chosen from three different categories: Simply Funny, Speedy laugh, Don't Laugh Challenge.
+1. Jokes can be chosen from three different categories: Simply Funny, Speedy laugh, Don't Laugh Challenge.
 The initial joke on the first render is fetched on the server at a build time with SSG + ISG: getStaticProps function na revalidate property in index.js.
 Once the site is loaded the jokes are fetched from the client side from jokes.js component.
 Upon clicking on 'Save' button a joke get saved in MongoDB on the user profile.
@@ -60,6 +60,7 @@ Upon clicking on 'Save' button a joke get saved in MongoDB on the user profile.
 
 
 
+2. 
 * In the savedJokes.js jokes get fetched from MongoDB on the server with SSG using getServerSideProps function. Because we need token from NextAuth we can not use SSG (that token has to come with the request and at build time when SSG can happen requests from the client can obvioulsy not arrive). So the page might be littel bit slower compared to the index.js very first load. 
 * We can also see custom notifications coming from the backend API's about the status of the ongoing requests. Notifications are managed with React Context.
 
@@ -67,14 +68,14 @@ Upon clicking on 'Save' button a joke get saved in MongoDB on the user profile.
 
 
 
-* profile.js page offers change password to the user with again custom notifications from the backend.
+3. profile.js page offers change password to the user with again custom notifications from the backend.
 ![Product Name Screen Shot](imgs/jokes4.png)
 
 
-* User login interface in auth.js
+4. User login interface in auth.js
 ![Product Name Screen Shot](imgs/jokes5.png)
 
-* User create account interface also in auth.js
+5.  User create account interface also in auth.js
 ![Product Name Screen Shot](imgs/jokes6.png)
 
 

@@ -42,7 +42,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-* Generate a joke a save it on your account. User login/create account interface. A fullstack Next.js app. Static Site Generation (SSG), Incremental Static Regeneration (ISG) for better Search Engine Optimazation (SEO) and speed. Also Server Side Rendering (SSR) in use. NextAuth for Authentication and route protection on the client and the server side. MongoDB for data storage. React Context for app wide state management. Notification for better UX when fetching data from backend APIs or external APIs.
+* Generate a joke a save it on your account. User login/create account interface. A fullstack Next.js app. Static Site Generation (SSG), Incremental Static Regeneration (ISG) for better Search Engine Optimazation (SEO) and performance. Also Server Side Rendering (SSR) in use. NextAuth for Authentication and route protection on the client and the server side. MongoDB for data storage. React Context for app wide state management. Notification for better UX when fetching data from backend APIs or external APIs.
 * Tailwind is used for styling following the Tailwind for Next.js instalation: https://tailwindcss.com/docs/guides/nextjs. Some custom classes are defined in tailwind.config.js.
 
 

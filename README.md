@@ -94,7 +94,7 @@ Upon clicking on 'Save' button a joke get saved in MongoDB on the user profile.
 * Next.js
 * NextAuth.js
 * Vercel for deployment
-* Git pages for version control,
+* Git for version control,
 * GitHub as a remote repository,
 * Visual Studio Code as a local IDE & repository,
 * Chrome Developer Tools for testing screen sizes and using Lighthouse,

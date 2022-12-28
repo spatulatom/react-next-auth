@@ -60,8 +60,7 @@ Upon clicking on 'Save' button a joke get saved in MongoDB on the user profile.
 
 
 
-2. 
-* In the savedJokes.js jokes get fetched from MongoDB on the server with SSG using getServerSideProps function. Because we need token from NextAuth we can not use SSG (that token has to come with the request and at build time when SSG can happen requests from the client can obvioulsy not arrive). So the page might be littel bit slower compared to the index.js very first load. 
+2. In the savedJokes.js jokes get fetched from MongoDB on the server with SSG using getServerSideProps function. Because we need token from NextAuth we can not use SSG (that token has to come with the request and at build time when SSG can happen requests from the client can obvioulsy not arrive). So the page might be littel bit slower compared to the index.js very first load. 
 * We can also see custom notifications coming from the backend API's about the status of the ongoing requests. Notifications are managed with React Context.
 
 ![Product Name Screen Shot](imgs/jokes3.png)

@@ -55,7 +55,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 The initial joke on the first render is fetched on the server at a build time with SSG + ISG: getStaticProps function na revalidate property in index.js.
 Once the site is loaded the jokes are fetched from the client side from jokes.js component.
 Upon clicking on 'Save' button a joke get saved in MongoDB on the user profile.
-* Custom notifications at teh buttom about the status of the ongoing requests. Notifications are managed with React Context.
+ Custom notifications at the buttom of the pages about the status of the ongoing requests. Notifications are managed with React Context.
 
 ![Product Name Screen Shot](imgs/jokes2.png)
 

@@ -42,7 +42,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-* Generate a joke a save it on your account. User login/create account interface. A fullstack Next.js app. Static Site Generation (SSG), Incremental Static Regeneration (ISG) for better Search Engine Optimazation (SEO) and performance. Also Server Side Rendering (SSR) in use. NextAuth for Authentication and route protection on the client and the server side. MongoDB for data storage. React Context for app wide state management. Notification for better UX when fetching data from backend APIs or external APIs.
+* Generate a joke a save it on your account. User login/create account interface. A fullstack Next.js 12 app. Static Site Generation (SSG), Incremental Static Regeneration (ISG) for better Search Engine Optimazation (SEO) and performance. Also Server Side Rendering (SSR) in use. NextAuth for Authentication and route protection on the client and the server side. MongoDB for data storage. React Context for app wide state management. Notification for better UX when fetching data from backend APIs or external APIs.
 * Tailwind is used for styling following the Tailwind for Next.js instalation: https://tailwindcss.com/docs/guides/nextjs. Some custom classes are defined in tailwind.config.js.
 
 
@@ -61,7 +61,7 @@ Upon clicking on 'Save' button a joke get saved in MongoDB on the user profile.
 
 
 
-2. In the savedJokes.js jokes get fetched from MongoDB on the server with SSG using getServerSideProps function. Because we need token from NextAuth we can not use SSG (that token has to come with the request and at build time when SSG can happen requests from the client can obvioulsy not arrive).  
+2. In the savedJokes.js jokes get fetched from MongoDB with the use of SSG and getServerSideProps function. 
 
 
 ![Product Name Screen Shot](imgs/jokes3.png)

@@ -74,12 +74,12 @@ Upon clicking on 'Save' button a joke get saved in MongoDB on the user profile.
 ![Product Name Screen Shot](imgs/jokes4.png)
 
 
-4. User login interface in auth.js
+4. User login interface in auth.js page. Notification for better UX.
 
 ![Product Name Screen Shot](imgs/jokes5.png)
 
 
-5.  User create account interface also in auth.js
+5.  User create account interface also in auth.js page. Notification in use.
 
 ![Product Name Screen Shot](imgs/jokes6.png)
 

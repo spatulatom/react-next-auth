@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
     }
   } catch (error) {
     return {
-      props: {
+      props: { 
         err: 'Iternal server error. Try to load a different joke please!',
       },
     };

@@ -114,8 +114,6 @@ Upon clicking on 'Save' button a joke get saved in MongoDB on the user profile.
 
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- MARKDOWN LINKS & IMAGES -->

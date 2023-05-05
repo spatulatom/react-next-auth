@@ -33,7 +33,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#built-with">Built With</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -90,10 +89,12 @@ Upon clicking on 'Save' button a joke get saved in MongoDB on the user profile.
 
 ### Built With
 
-* Tailwind
-* Next.js
-* NextAuth.js
-* Vercel for deployment
+* Tailwind CSS,
+* Next.js,
+* Context API for global state managment,
+* MongoDB for data storage,
+* NextAuth.js for user authentication,
+* Vercel for deployment,
 * Git for version control,
 * GitHub as a remote repository,
 * Visual Studio Code as a local IDE & repository,
@@ -110,11 +111,6 @@ Upon clicking on 'Save' button a joke get saved in MongoDB on the user profile.
 
 
 
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* Udemy courses on Tailwind: https://www.udemy.com/course/tailwind-from-scratch/
-and Next.js: https://www.udemy.com/course/nextjs-react-the-complete-guide/
 
 
 

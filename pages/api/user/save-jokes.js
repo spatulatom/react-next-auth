@@ -12,7 +12,7 @@ async function handler(req, res) {
   const session = await getSession({ req: req });
 
   if (!session) {
-    res.status(401).json({ message: 'To save a JOKE please login!' });
+    res.status(401).json({ message: 'To save a joke please LOG IN!' });
     return;
   }
 

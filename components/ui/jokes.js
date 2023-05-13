@@ -20,7 +20,7 @@ export default function Jokes(props) {
     notificationCtx.showNotification({
       title: 'Seving joke...',
       message:
-        'Your chosen joked is currently being stored into on your account.',
+        'Your chosen joke is currently being stored into on your account.',
       status: 'pending',
     });
 

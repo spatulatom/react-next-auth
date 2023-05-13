@@ -73,7 +73,7 @@ export default function savedJokes(props) {
     const data = await response.json();
     try {
       if (response.ok) {
-        setJokes(data);
+        setJokes(data.reverse());
         setError('');
         setIsLoading(false);
       } else {

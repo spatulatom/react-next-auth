@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
     }
   } catch (error) {
     return {
-      props: { 
+      props: {
         err: 'Iternal server error. Try to load a different joke please!',
       },
     };
@@ -29,8 +29,6 @@ export const getStaticProps = async () => {
 };
 
 export default function kkks(props) {
-
-
   return (
     <Fragment>
       <Head>
@@ -79,8 +77,6 @@ export default function kkks(props) {
                 Save favourite jokes on your account and come back any time to
                 lift up your mood!
               </p>
-
-         
             </div>
 
             {/* Image */}
@@ -105,8 +101,6 @@ export default function kkks(props) {
               35,000+ Already Joined
             </p>
             <h2 className="px-3 mb-6 text-3xl font-semibold text-center text-white md:text-4xl"></h2>
-
-           
           </div>
         </section>
 

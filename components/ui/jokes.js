@@ -202,19 +202,19 @@ export default function Jokes(props) {
               ) : null}
 
               {joke ? (
-                <div className="mx-auto md:mx-0">
+                <div className="mx-auto">
                   <a
                     onClick={saveJoke}
-                    className="px-24 py-4 font-normal text-lg cursor-pointer mt-4 text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
+                    className="uppercase  px-24 py-4 font-normal text-lg cursor-pointer mt-4 text-white border-2 border-white rounded-lg md:inline-flex bg-veryDarkBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
                   >
                     Save
                   </a>
                 </div>
               ) : (
-                <div className="mx-auto md:mx-0">
+                <div className="mx-auto">
                   <button
                     disabled
-                    className="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue cursor-not-allowed"
+                    className="uppercase  px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-veryDarkBlue cursor-not-allowed"
                   >
                     Save
                   </button>
@@ -254,19 +254,19 @@ export default function Jokes(props) {
                 </p>
               ) : null}
               {joke ? (
-                <div className="mx-auto md:mx-0">
+                <div className="mx-auto">
                   <a
                     onClick={saveJoke}
-                    className="px-24 font-normal text-lg cursor-pointer py-4 mt-4 text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
+                    className="uppercase  px-24 font-normal text-lg cursor-pointer py-4 mt-4 text-white border-2 border-white rounded-lg md:inline-flex bg-veryDarkBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
                   >
                     Save
                   </a>
                 </div>
               ) : (
-                <div className="mx-auto md:mx-0">
+                <div className="mx-auto">
                   <button
                     disabled
-                    className="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue cursor-not-allowed"
+                    className="uppercase  px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-veryDarkBlue cursor-not-allowed"
                   >
                     Save
                   </button>
@@ -306,19 +306,19 @@ export default function Jokes(props) {
                 </p>
               ) : null}
               {joke ? (
-                <div className="mx-auto md:mx-0">
+                <div className="mx-auto">
                   <a
                     onClick={saveJoke}
-                    className="px-24 font-normal text-lg cursor-pointer py-4 mt-4 text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
+                    className="uppercase  px-24 font-normal text-lg cursor-pointer py-4 mt-4 text-white border-2 border-white rounded-lg md:inline-flex bg-veryDarkBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
                   >
                     Save
                   </a>
                 </div>
               ) : (
-                <div className="mx-auto md:mx-0">
+                <div className="mx-auto">
                   <button
                     disabled
-                    className="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue cursor-not-allowed"
+                    className="uppercase  px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-veryDarkBlue cursor-not-allowed"
                   >
                     Save
                   </button>

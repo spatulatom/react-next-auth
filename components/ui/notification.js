@@ -23,7 +23,7 @@ function Notification(props) {
 
   return (
     <div
-      className={`flex flex-col fixed top-1/4  md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 justify-between items-center text-white p-2 pt-4 m-2 md:p-4 md:py-8  md:w-1/2 rounded   min-h-max md:flex-row ${statusClasses}`}
+      className={`flex flex-col fixed  w-screen   justify-between items-center text-white p-2 pt-4 m-2 md:p-4 md:py-8  rounded   min-h-max md:flex-row ${statusClasses}`}
       onClick={notificationCtx.hideNotification}
     >
       <h2 className='mr-2 whitespace-nowrap uppercase'>{title}</h2>

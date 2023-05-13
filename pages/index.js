@@ -39,32 +39,32 @@ export default function kkks(props) {
         />
       </Head>
 
- {/* Hero Section */}
- <section id="hero">
-          {/* Container For Image & Content */}
-          <div className="container flex flex-col mx-auto p-6 lg:flex-row lg:mb-0">
-            {/* Content */}
-            <div className="flex flex-col space-y-10 mt-16 mb-3 ">
-              <h1 className="text-2xl font-semibold text-center lg:text-4xl lg:text-left">
-                Bookmark A Joke
-              </h1>
-              <p className="max-w-md mx-auto text-lg text-center text-gray-400 lg:text-xl lg:text-left lg:mt-0 lg:mx-0">
-                A clean and simple interface to organize your favourite jokes. Generate a joke and save it
-                 on your account. 
-              </p>
-            </div>
-
-            {/* Image */}
-            <div className="relative mx-auto lg:mx-0 lg:mb-0 lg:w-1/2">
-              <div className="bg-hero"></div>
-              <img
-                src="images/illustration-hero.svg"
-                alt=""
-                className="relative lg:top-24 xl:top-0 overflow-x-visible"
-              />
-            </div>
+      {/* Hero Section */}
+      <section id="hero">
+        {/* Container For Image & Content */}
+        <div className="container flex flex-col mx-auto p-6 lg:flex-row lg:mb-0">
+          {/* Content */}
+          <div className="flex flex-col space-y-10 mt-16 mb-3 ">
+            <h1 className="text-2xl font-semibold text-center lg:text-4xl lg:text-left">
+              Bookmark A Joke
+            </h1>
+            <p className="max-w-md mx-auto text-lg text-center text-gray-400 lg:text-xl lg:text-left lg:mt-0 lg:mx-0">
+              A clean and simple interface to organize your favourite jokes.
+              Generate a joke and save it on your account.
+            </p>
           </div>
-        </section>
+
+          {/* Image */}
+          <div className="relative mx-auto lg:mx-0 lg:mb-0 lg:w-1/2">
+            <div className="bg-hero"></div>
+            <img
+              src="images/illustration-hero.svg"
+              alt=""
+              className="relative lg:top-24 xl:top-0 overflow-x-visible"
+            />
+          </div>
+        </div>
+      </section>
 
       <div className="overflow-x-hidden">
         {/* Features Heading */}
@@ -90,8 +90,6 @@ export default function kkks(props) {
 
         {/* Features Tabs */}
         <Jokes joke={props.joke} err={props.err} />
-
-       
 
         {/* FAQ Heading */}
 

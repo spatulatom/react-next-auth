@@ -31,7 +31,12 @@ function MainNavigation() {
         {/* Logo */}
         <Link href="/">
           <span className="z-30 cursor-pointer">
-            <img src="images/logo-bookmark.svg" alt="" id="logo" />
+          <img
+              src="images/logo-bookmark-footer.svg"
+              alt=""
+              className="mb-1 cursor-pointer hover: text-red-500"
+            />
+            
           </span>
         </Link>
 

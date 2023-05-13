@@ -16,7 +16,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 
   <p>
-    'joke's manager' is a fullstack Next.js app - this repository contains its source code
+    'bookmark a joke' is a fullstack Next.js app - this repository contains its source code
        <br />
     <a href="https://react-next-auth-ashy.vercel.app/"><strong>View the deployed app on Vercel »</strong></a>
     <br />

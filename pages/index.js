@@ -32,19 +32,47 @@ export default function kkks(props) {
   return (
     <Fragment>
       <Head>
-        <title>Bookmark Your Jokes</title>
+        <title>Bookmark A Joke</title>
         <meta
           name="description"
           content="Find jokes that make your day and save them for later!"
         />
       </Head>
+
+ {/* Hero Section */}
+ <section id="hero">
+          {/* Container For Image & Content */}
+          <div className="container flex flex-col mx-auto p-6 lg:flex-row lg:mb-0">
+            {/* Content */}
+            <div className="flex flex-col space-y-10 mt-16 mb-3 ">
+              <h1 className="text-2xl font-semibold text-center lg:text-4xl lg:text-left">
+                Bookmark A Joke
+              </h1>
+              <p className="max-w-md mx-auto text-lg text-center text-gray-400 lg:text-xl lg:text-left lg:mt-0 lg:mx-0">
+                A clean and simple interface to organize your favourite jokes. Generate a joke and save it
+                 on your account. 
+              </p>
+            </div>
+
+            {/* Image */}
+            <div className="relative mx-auto lg:mx-0 lg:mb-0 lg:w-1/2">
+              <div className="bg-hero"></div>
+              <img
+                src="images/illustration-hero.svg"
+                alt=""
+                className="relative lg:top-24 xl:top-0 overflow-x-visible"
+              />
+            </div>
+          </div>
+        </section>
+
       <div className="overflow-x-hidden">
         {/* Features Heading */}
 
         <section id="features">
-          <div className="container mx-auto mt-16 px-6">
-            <h2 className="mb-6 text-4xl font-semibold text-center">
-              Bookmark A Joke
+          <div className="container mx-auto mt-16 lg:mt-36 px-6">
+            <h2 className="mb-6 text-2xl lg:text-4xl font-semibold text-center">
+              Laughter
             </h2>
             <p className="max-w-md mx-auto text-center text-grayishBlue">
               Laughter can increase your oxygen intake, which can in turn
@@ -63,33 +91,7 @@ export default function kkks(props) {
         {/* Features Tabs */}
         <Jokes joke={props.joke} err={props.err} />
 
-        {/* Hero Section */}
-        <section id="hero">
-          {/* Container For Image & Content */}
-          <div className="container flex flex-col-reverse mx-auto p-6 lg:flex-row lg:mb-0">
-            {/* Content */}
-            <div className="flex flex-col space-y-10 lg:mt-16 lg:w-1/2">
-              <h1 className="text-3xl font-semibold text-center lg:text-6xl lg:text-left">
-                Bookmark A Joke
-              </h1>
-              <p className="max-w-md mx-auto text-lg text-center text-gray-400 lg:text-2xl lg:text-left lg:mt-0 lg:mx-0">
-                A clean and simple interface to organize your favourite jokes.
-                Save favourite jokes on your account and come back any time to
-                lift up your mood!
-              </p>
-            </div>
-
-            {/* Image */}
-            <div className="relative mx-auto lg:mx-0 lg:mb-0 lg:w-1/2">
-              <div className="bg-hero"></div>
-              <img
-                src="images/illustration-hero.svg"
-                alt=""
-                className="relative lg:top-24 xl:top-0 overflow-x-visible"
-              />
-            </div>
-          </div>
-        </section>
+       
 
         {/* FAQ Heading */}
 

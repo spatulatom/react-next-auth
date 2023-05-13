@@ -318,7 +318,7 @@ export default function Jokes(props) {
                 <div className="mx-auto md:mx-0">
                   <button
                     disabled
-                    className="px-6 cursor-pointer py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue cursor-not-allowed"
+                    className="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue cursor-not-allowed"
                   >
                     Save
                   </button>

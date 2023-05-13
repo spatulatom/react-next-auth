@@ -44,7 +44,7 @@ async function handler(req, res) {
   //   });
 
   client.close();
-  res.status(200).json({ message: 'Check SAVED JOKES tab in the MENU!' });
+  res.status(200).json({ message: 'Click BOOKAMRKED JOKES in the MENU to see your saved joke!' });
   
 }
 

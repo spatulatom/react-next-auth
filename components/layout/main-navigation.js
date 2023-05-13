@@ -46,7 +46,7 @@ function MainNavigation() {
           {session && (
             <Link href="/savedJokes">
               <span className="tracking-widest hover:text-softRed cursor-pointer">
-                Saved Jokes
+                Bookmarked Jokes
               </span>
             </Link>
           )}
@@ -120,7 +120,7 @@ function MainNavigation() {
               className="block hover:text-softRed"
               onClick={handleMobileMenu}
             >
-              Saved Jokes
+              Bookmarked Jokes
             </Link>
           </div>
         )}

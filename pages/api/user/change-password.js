@@ -15,7 +15,7 @@ async function handler(req, res) {
     return;
   }
 
-  const userEmail = session.user.email; 
+  const userEmail = session.user.email;
   const oldPassword = req.body.oldPassword;
   const newPassword = req.body.newPassword;
 
@@ -40,7 +40,9 @@ async function handler(req, res) {
   const passwordsAreEqual = await verifyPassword(oldPassword, currentPassword);
 
   if (!passwordsAreEqual) {
-    res.status(403).json({ message: 'Invalid current password. Try again please!' });
+    res
+      .status(403)
+      .json({ message: 'Invalid current password. Try again please!' });
     client.close();
     return;
   }

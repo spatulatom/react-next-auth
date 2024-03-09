@@ -185,7 +185,7 @@ export default function Jokes(props) {
             </div>
             {/* Panel Content */}
             <div className="flex flex-col justify-between space-y-8 md:w-1/2">
-              <h3 className="mt-8 mb-16 max-w-md text-3xl font-semibold text-center md:mt-0 md:mb-0 md:text-left">
+              <h3 className="my-4 max-w-md text-xl font-semibold text-center md:mt-0 md:mb-0 md:text-left">
                 {loading ? (
                   <div className="text-center">
                     <i class="fa-solid fa-spinner fa-spin"></i>
@@ -202,7 +202,7 @@ export default function Jokes(props) {
               ) : null}
 
               {joke ? (
-                <div className="mx-auto">
+                <div className="mx-auto md:mx-0 pt-16 md:pt-0">
                   <a
                     onClick={saveJoke}
                     className="uppercase  px-24 py-4 font-normal text-lg cursor-pointer mt-4 text-white border-2 border-white rounded-lg md:inline-flex bg-veryDarkBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
@@ -211,7 +211,7 @@ export default function Jokes(props) {
                   </a>
                 </div>
               ) : (
-                <div className="mx-auto">
+                <div className="mx-auto md:mx-0 pt-16 md:pt-0">
                   <button
                     disabled
                     className="uppercase  px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-veryDarkBlue cursor-not-allowed"
@@ -239,7 +239,7 @@ export default function Jokes(props) {
             </div>
             {/* Panel Content */}
             <div className="flex flex-col justify-around space-y-8 md:w-1/2">
-              <h3 className="mt-8 mb-16 max-w-md text-3xl font-semibold text-center md:mt-0 md:mb-0 md:text-left">
+              <h3 className="my-4 max-w-md text-xl font-semibold text-center md:mt-0 md:mb-0 md:text-left">
                 {loading ? (
                   <div className="text-center">
                     <i class="fa-solid fa-spinner fa-spin"></i>
@@ -254,7 +254,7 @@ export default function Jokes(props) {
                 </p>
               ) : null}
               {joke ? (
-                <div className="mx-auto">
+                <div className="mx-auto md:mx-0 pt-16 md:pt-0">
                   <a
                     onClick={saveJoke}
                     className="uppercase  px-24 font-normal text-lg cursor-pointer py-4 mt-4 text-white border-2 border-white rounded-lg md:inline-flex bg-veryDarkBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
@@ -263,7 +263,7 @@ export default function Jokes(props) {
                   </a>
                 </div>
               ) : (
-                <div className="mx-auto">
+                <div className="mx-auto md:mx-0 pt-16 md:pt-0">
                   <button
                     disabled
                     className="uppercase  px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-veryDarkBlue cursor-not-allowed"
@@ -291,7 +291,7 @@ export default function Jokes(props) {
             </div>
             {/* Panel Content */}
             <div className="flex flex-col justify-around space-y-8 md:w-1/2">
-              <h3 className="mt-8 mb-16 max-w-md text-3xl font-semibold text-center md:mt-0 md:mb-0 md:text-left">
+              <h3 className="my-4 max-w-md text-xl font-semibold text-center md:mt-0 md:mb-0 md:text-left">
                 {loading ? (
                   <div className="text-center">
                     <i class="fa-solid fa-spinner fa-spin"></i>
@@ -306,7 +306,7 @@ export default function Jokes(props) {
                 </p>
               ) : null}
               {joke ? (
-                <div className="mx-auto">
+                <div className="mx-auto md:mx-0 pt-16 md:pt-0">
                   <a
                     onClick={saveJoke}
                     className="uppercase  px-24 font-normal text-lg cursor-pointer py-4 mt-4 text-white border-2 border-white rounded-lg md:inline-flex bg-veryDarkBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
@@ -315,7 +315,7 @@ export default function Jokes(props) {
                   </a>
                 </div>
               ) : (
-                <div className="mx-auto">
+                <div className="mx-auto md:mx-0 pt-16 md:pt-0">
                   <button
                     disabled
                     className="uppercase  px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-veryDarkBlue cursor-not-allowed"

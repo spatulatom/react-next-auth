@@ -3,23 +3,22 @@ import { Fragment } from 'react';
 import Head from 'next/head';
 import { getSession } from 'next-auth/react';
 
-export const getServerSideProps = async (context) => {
-  const { req, res } = context;
-  const session = await getSession({ req: req });
+// export const getServerSideProps = async (context) => {
+//   const { req, res } = context;
+//   const session = await getSession({ req: req });
 
-  if (!session) {
-    return {
-      redirect: { destination: '/', permanent: false },
-    };
-  }
+//   if (!session) {
+//     return {
+//       redirect: { destination: '/', permanent: false },
+//     };
+//   }
 
-  return {
-    props: { session },
-  };
-};
+//   return {
+//     props: { session },
+//   };
+// };
 
 export default function Faq() {
-
   return (
     <Fragment>
       <Head>
@@ -49,7 +48,7 @@ export default function Faq() {
               <div className="flex items-center justify-between py-3 text-gray-500 cursor-pointer group">
                 {/* Tab Title */}
                 <div className="transition duration-500 ease group-hover:text-red-500">
-                  What is a Joke Bookmark?
+                  What is 'Bookmark a Joke App' about
                 </div>
                 {/* Arrow */}
                 <div className="transition duration-500 ease group-focus:-rotate-180 group-focus:text-red-500">
@@ -71,9 +70,47 @@ export default function Faq() {
               {/* Tab Inner Content */}
               <div className="overflow-hidden duration-500 group-focus:max-h-screen max-h-0 ease">
                 <p className="py-2 text-justify text-gray-400">
-                  A clean and simple interface to organize your favourite jokes.
-                  Save favourite jokes on your account and come back any time to
-                  lift up your mood!
+                  A clean and simple app to organize your favourite jokes.
+                  Generate a Joke and click 'Save' to have all your favourite
+                  jokes saved - bookmarked - on your profile.
+                </p>
+              </div>
+            </div>
+
+            {/* Tab 2 */}
+            <div className="py-1 border-b outline-none group" tabindex="2">
+              {/* Tab Flex Container */}
+              <div className="flex items-center justify-between py-3 text-gray-500 transition duration-500 cursor-pointer group ease">
+                {/* Tab Title */}
+                <div className="transition duration-500 ease group-hover:text-red-500">
+                  What is Laughter?
+                </div>
+                {/* Arrow */}
+                <div className="transition duration-500 ease group-focus:-rotate-180 group-focus:text-red-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="12"
+                  >
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      d="M1 1l8 8 8-8"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Tab Inner Content */}
+              <div className="overflow-hidden transition duration-500 group-focus:max-h-screen max-h-0 ease">
+                <p className="py-2 text-justify text-gray-400">
+                  Laughter can increase your oxygen intake, which can in turn
+                  stimulate your heart, lungs, and muscles. Laughing further
+                  releases endorphins, the feel-good chemicals our bodies
+                  produce to make us feel happy and even relieve pain or stress.
+                  Use this app to get your laughter back on track unless you're
+                  already there, then use it anyway :).
                 </p>
               </div>
             </div>

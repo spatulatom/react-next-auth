@@ -40,10 +40,10 @@ export default function kkks(props) {
       </Head>
 
       {/* Hero Section */}
-      <section id="hero">
-        {/* Container For Image & Content */}
+      {/* <section id="hero">
+        
         <div className="container flex flex-col mx-auto p-6 lg:flex-row lg:mb-0">
-          {/* Content */}
+        
           <div className="flex flex-col space-y-10 mt-16 mb-3 ">
             <h1 className="text-2xl font-semibold text-center lg:text-4xl lg:text-left">
               Bookmark A Joke
@@ -54,7 +54,7 @@ export default function kkks(props) {
             </p>
           </div>
 
-          {/* Image */}
+        
           <div className="relative mx-auto lg:mx-0 lg:mb-0 lg:w-1/2">
             <div className="bg-hero"></div>
             <img
@@ -64,7 +64,7 @@ export default function kkks(props) {
             />
           </div>
         </div>
-      </section>
+      </section> */}
 
       <div className="overflow-x-hidden">
         {/* Features Heading */}
@@ -72,18 +72,16 @@ export default function kkks(props) {
         <section id="features">
           <div className="container mx-auto mt-16 lg:mt-36 px-6">
             <h2 className="mb-6 text-2xl lg:text-4xl font-semibold text-center">
-              Laughter
+              Bookmark a Joke App
             </h2>
-            <p className="max-w-md mx-auto text-center text-grayishBlue">
-              Laughter can increase your oxygen intake, which can in turn
-              stimulate your heart, lungs, and muscles. Laughing further
-              releases endorphins, the feel-good chemicals our bodies produce to
-              make us feel happy and even relieve pain or stress.
-              <span className="font-bold">
-                {' '}
-                Use this app to get your laughter back on track unless you're
-                already there, then use it anyway :).
-              </span>
+           
+            <p className="max-w-md mx-auto">
+            Click on one of the three tabs below to generate a new funny joke.
+              If you like it then click 'Save' to save (bookmark) the joke on your account! 
+              
+              
+               
+              
             </p>
           </div>
         </section>

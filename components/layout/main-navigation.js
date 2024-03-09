@@ -55,13 +55,13 @@ function MainNavigation() {
               </span>
             </Link>
           )}
-          {status === 'authenticated' && (
+          
             <Link href="/faq">
               <span className="tracking-widest hover:text-softRed cursor-pointer">
                 FAQ
               </span>
             </Link>
-          )}
+          
           {status === 'authenticated' && (
             <Link href="/profile">
               <span className="tracking-widest hover:text-softRed cursor-pointer">

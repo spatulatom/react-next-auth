@@ -31,23 +31,21 @@ function MainNavigation() {
         {/* Logo */}
         <Link href="/">
           <span className="z-30 cursor-pointer">
-          <img
+            <img
               src="images/logo-bookmark-footer.svg"
               alt=""
               className="mb-1 cursor-pointer hover: text-red-500"
             />
-            
           </span>
         </Link>
 
         <div className="hidden  items-center space-x-10 uppercase text-white md:flex">
-          {status === 'authenticated' && (
-            <Link href="/">
-              <span className="tracking-widest hover:text-softRed cursor-pointer">
-                Home
-              </span>
-            </Link>
-          )}
+          <Link href="/">
+            <span className="tracking-widest hover:text-softRed cursor-pointer">
+              Home
+            </span>
+          </Link>
+
           {session && (
             <Link href="/savedJokes">
               <span className="tracking-widest hover:text-softRed cursor-pointer">
@@ -55,13 +53,13 @@ function MainNavigation() {
               </span>
             </Link>
           )}
-          
-            <Link href="/faq">
-              <span className="tracking-widest hover:text-softRed cursor-pointer">
-                FAQ
-              </span>
-            </Link>
-          
+
+          <Link href="/faq">
+            <span className="tracking-widest hover:text-softRed cursor-pointer">
+              FAQ
+            </span>
+          </Link>
+
           {status === 'authenticated' && (
             <Link href="/profile">
               <span className="tracking-widest hover:text-softRed cursor-pointer">
@@ -107,17 +105,16 @@ function MainNavigation() {
           showMobile ? 'flex' : 'hidden'
         } text-white space-y-5 fixed inset-0 z-20 flex-col items-center self-end w-full h-full m-h-screen px-6 py-1 pt-24 pb-4 tracking-widest uppercase divide- divide-gray-500 opacity-90 bg-veryDarkBlue md:hidden`}
       >
-        {status === 'authenticated' && (
-          <div className="w-full py-3 text-center">
-            <Link
-              href="/"
-              className="block hover:text-softRed "
-              onClick={handleMobileMenu}
-            >
-              Home
-            </Link>
-          </div>
-        )}
+        <div className="w-full py-3 text-center">
+          <Link
+            href="/"
+            className="block hover:text-softRed "
+            onClick={handleMobileMenu}
+          >
+            Home
+          </Link>
+        </div>
+
         {status === 'authenticated' && (
           <div className="w-full py-3 text-center">
             <Link
@@ -129,17 +126,17 @@ function MainNavigation() {
             </Link>
           </div>
         )}
-        
-          <div className="w-full py-3 text-center">
-            <Link
-              href="/faq"
-              className="block hover:text-softRed"
-              onClick={handleMobileMenu}
-            >
-              FAQ
-            </Link>
-          </div>
-        
+
+        <div className="w-full py-3 text-center">
+          <Link
+            href="/faq"
+            className="block hover:text-softRed"
+            onClick={handleMobileMenu}
+          >
+            FAQ
+          </Link>
+        </div>
+
         {status === 'authenticated' && (
           <div className="w-full py-3 text-center">
             <Link

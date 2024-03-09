@@ -26,11 +26,12 @@ function Notification(props) {
   // here was tried but it also dosen work
   return (
     <div
-      className={`flex flex-col z-50 fixed w-95% right-0  mx-2 md:w-1/2 md:left-1/2 md:top-14 md:-translate-x-1/2 md:-translate-y-1/2 border-r-8 border-l-8 border-softRed justify-between items-center text-white p-2 pt-4 pb-6 m-2 md:p-4 md:py-8  rounded-lg   min-h-max md:flex-row ${statusClasses}`}
+      className={`flex flex-col z-50 fixed w-95% right-0 top-1/3  mx-2 md:w-1/2 md:left-1/2 md:top-32 md:-translate-x-1/2 md:-translate-y-1/2  justify-between items-center text-white p-2 pt-4 pb-6 m-2 md:p-4 md:py-8  rounded-lg   min-h-max md:flex-row ${statusClasses}`}
       onClick={notificationCtx.hideNotification}
     >
       <h2 className='mx-4 whitespace-nowrap uppercase'>{title}</h2>
       <p>{message}</p>
+      <p className="absolute top-0 right-2 px-1 cursor-pointer border ">Close X</p>
     </div>
   );
 }

@@ -129,7 +129,7 @@ function MainNavigation() {
             </Link>
           </div>
         )}
-        {status === 'authenticated' && (
+        
           <div className="w-full py-3 text-center">
             <Link
               href="/faq"
@@ -139,7 +139,7 @@ function MainNavigation() {
               FAQ
             </Link>
           </div>
-        )}
+        
         {status === 'authenticated' && (
           <div className="w-full py-3 text-center">
             <Link

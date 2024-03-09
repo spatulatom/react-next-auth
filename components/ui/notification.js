@@ -31,7 +31,7 @@ function Notification(props) {
     >
       <h2 className='mx-4 whitespace-nowrap uppercase'>{title}</h2>
       <p>{message}</p>
-      <p className="absolute top-0 right-2 px-1 cursor-pointer border ">Close X</p>
+      <p className="absolute text-sm top-0 right-2 px-1 mt-1 cursor-pointer border ">Close X</p>
     </div>
   );
 }

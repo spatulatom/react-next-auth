@@ -87,7 +87,7 @@ export default function savedJokes(props) {
   if (loading && !props.message) {
     return (
       <div className="container mx-auto">
-        <h2 className="mb-6 mt-8 text-3xl font-semibold text-center md:text-4xl">
+        <h2 className="mb-6 mt-8 text-xl font-semibold text-center md:text-4xl">
           Your bookmarked jokes:
         </h2>
         <p className="max-w-lg px-6 mx-auto text-center text-gray-500">
@@ -111,12 +111,11 @@ export default function savedJokes(props) {
     } else if (jokes.length === 0 && error.length !== 0) {
       return (
         <div className="container mx-auto">
-          <h2 className="mb-6 mt-8 text-3xl font-semibold text-center md:text-4xl">
-            Your bookmarked jokes
+          <h2 className="mb-6 mt-8 text-xl font-semibold text-center md:text-4xl">
+            Your bookmarked jokes:
           </h2>
           <p className="max-w-lg px-6 mx-auto text-center text-gray-500">
-            Here are your saved jokes so you can always have a quick look at
-            those that made you laugh!
+          
           </p>
 
           <p className="max-w-lg px-6 py-8 mx-auto mt-8 text-center bg-red-300 text-gray-500">
@@ -131,12 +130,11 @@ export default function savedJokes(props) {
 
           <section id="faq">
             <div className="container mx-auto">
-              <h2 className="mb-6 mt-8 text-3xl font-semibold text-center md:text-4xl">
+              <h2 className="mb-6 mt-8 text-xl font-semibold text-center md:text-4xl">
                 Your bookmarked jokes
               </h2>
               <p className="max-w-lg px-6 mx-auto text-center text-gray-500">
-                Here are your saved jokes so you can always have a quick look at
-                those that made you laugh!
+               
               </p>
             </div>
           </section>

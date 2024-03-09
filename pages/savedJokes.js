@@ -131,7 +131,7 @@ export default function savedJokes(props) {
           <section id="faq">
             <div className="container mx-auto">
               <h2 className="mb-6 mt-8 text-xl font-semibold text-center md:text-4xl">
-                Your bookmarked jokes
+                Your bookmarked jokes:
               </h2>
               <p className="max-w-lg px-6 mx-auto text-center text-gray-500">
                

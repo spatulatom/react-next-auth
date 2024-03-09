@@ -10,15 +10,15 @@ function Notification(props) {
   let statusClasses = '';
 
   if (status === 'success') {
-    statusClasses = 'bg-veryDarkBlue';
+    statusClasses = 'bg-green-700';
   }
 
   if (status === 'error') {
-    statusClasses = 'bg-red-600';
+    statusClasses = 'bg-red-400';
   }
 
   if (status === 'pending') {
-    statusClasses = 'bg-blue-900';
+    statusClasses = 'bg-green-500';
   }
 
   // when position fixed and width set to full/screen on mobile the div below has one margin visible and the other one goes into side

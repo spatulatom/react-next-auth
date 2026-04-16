@@ -103,8 +103,8 @@ export default function savedJokes(props) {
     if (jokes.length === 0 && error.length === 0) {
       return (
         <p className="max-w-lg px-6 py-8 mx-auto text-center text-gray-500">
-          Here is a palce for your saved jokes to brighten up your day! Go to
-          the home page and click 'Save' under a joke you like to have it
+          Here is a palce for your saved jokes to brighten up your day!! Go to
+          the home page and click 'Save' button under a joke that you like and you will have it
           bookmarked below.
         </p>
       );

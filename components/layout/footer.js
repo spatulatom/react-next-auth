@@ -50,15 +50,6 @@ export default function Footer() {
           )}
         </div>
 
-        {/* Social Container */}
-        {/* <div className="flex space-x-10">
-          <a href="#">
-            <img src="images/icon-facebook.svg" alt="" className="h-6 ficon" />
-          </a>
-          <a href="#">
-            <img src="images/icon-twitter.svg" alt="" className="h-6 ficon" />
-          </a>
-        </div> */}
       </div>
     </footer>
   );

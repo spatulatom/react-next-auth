@@ -9,7 +9,6 @@ function ProfileForm(props) {
 
     const enteredOldPassword = oldPasswordRef.current.value;
     const enteredNewPassword = newPasswordRef.current.value;
-
     // optional: Add validation
 
     props.onChangePassword({

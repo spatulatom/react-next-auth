@@ -15,6 +15,8 @@ function Layout(props) {
     // go up, it would stack up after the next element so it would be somewhere in the middle
     // and setting these css n body in document.js is no good since what in
     // the body there is jus one <Main/> element
+
+    
     <div className="min-h-screen w-screen flex flex-col justify-between">
       <MainNavigation />
       <main className="scroll-smooth">{props.children}</main>
